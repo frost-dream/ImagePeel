@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join</title>
+    <link rel="icon" href="static/icon.png">
+    <style>
+@layer theme {
+  :root, :host {
+    --font-sans: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji';
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
+    monospace;
+    --color-purple-600: oklch(55.8% 0.288 302.321);
+    --color-black: #000;
+    --color-white: #fff;
+    --spacing: 0.25rem;
+    --container-md: 28rem;
+    --text-sm: 0.875rem;
+    --text-sm--line-height: calc(1.25 / 0.875);
+    --text-2xl: 1.5rem;
+    --text-2xl--line-height: calc(2 / 1.5);
+    --text-3xl: 1.875rem;
+    --text-3xl--line-height: calc(2.25 / 1.875);
+    --text-4xl: 2.25rem;
+    --text-4xl--line-height: calc(2.5 / 2.25);
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --radius-lg: 0.5rem;
+    --radius-2xl: 1rem;
+    --blur-sm: 8px;
+    --default-transition-duration: 150ms;
+    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    --default-font-family: var(--font-sans);
+    --default-mono-font-family: var(--font-mono);
+  }
+}
+@layer base {
+  *, ::after, ::before, ::backdrop, ::file-selector-button {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0 solid;
+  }
+  html, :host {
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    tab-size: 4;
+    font-family: var(--default-font-family, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji');
+    font-feature-settings: var(--default-font-feature-settings, normal);
+    font-variation-settings: var(--default-font-variation-settings, normal);
+    -webkit-tap-highlight-color: transparent;
+  }
+  hr {
+    height: 0;
+    color: inherit;
+    border-top-width: 1px;
+  }
+  abbr:where([title]) {
+    -webkit-text-decoration: underline dotted;
+    text-decoration: underline dotted;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+  a {
+    color: inherit;
+    -webkit-text-decoration: inherit;
+    text-decoration: inherit;
+  }
+  b, strong {
+    font-weight: bolder;
+  }
+  code, kbd, samp, pre {
+    font-family: var(--default-mono-font-family, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace);
+    font-feature-settings: var(--default-mono-font-feature-settings, normal);
+    font-variation-settings: var(--default-mono-font-variation-settings, normal);
+    font-size: 1em;
+  }
+  small {
+    font-size: 80%;
+  }
+  sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  sub {
+    bottom: -0.25em;
+  }
+  sup {
+    top: -0.5em;
+  }
+  table {
+    text-indent: 0;
+    border-color: inherit;
+    border-collapse: collapse;
+  }
+  :-moz-focusring {
+    outline: auto;
+  }
+  progress {
+    vertical-align: baseline;
+  }
+  summary {
+    display: list-item;
+  }
+  ol, ul, menu {
+    list-style: none;
+  }
+  img, svg, video, canvas, audio, iframe, embed, object {
+    display: block;
+    vertical-align: middle;
+  }
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+  button, input, select, optgroup, textarea, ::file-selector-button {
+    font: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    border-radius: 0;
+    background-color: transparent;
+    opacity: 1;
+  }
+  :where(select:is([multiple], [size])) optgroup {
+    font-weight: bolder;
+  }
+  :where(select:is([multiple], [size])) optgroup option {
+    padding-inline-start: 20px;
+  }
+  ::file-selector-button {
+    margin-inline-end: 4px;
+  }
+  ::placeholder {
+    opacity: 1;
+  }
+  @supports (not (-webkit-appearance: -apple-pay-button)) or (contain-intrinsic-size: 1px) {
+    ::placeholder {
+      color: currentcolor;
+      @supports (color: color-mix(in lab, red, red)) {
+        color: color-mix(in oklab, currentcolor 50%, transparent);
+      }
+    }
+  }
+  textarea {
+    resize: vertical;
+  }
+  ::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+  ::-webkit-date-and-time-value {
+    min-height: 1lh;
+    text-align: inherit;
+  }
+  ::-webkit-datetime-edit {
+    display: inline-flex;
+  }
+  ::-webkit-datetime-edit-fields-wrapper {
+    padding: 0;
+  }
+  ::-webkit-datetime-edit, ::-webkit-datetime-edit-year-field, ::-webkit-datetime-edit-month-field, ::-webkit-datetime-edit-day-field, ::-webkit-datetime-edit-hour-field, ::-webkit-datetime-edit-minute-field, ::-webkit-datetime-edit-second-field, ::-webkit-datetime-edit-millisecond-field, ::-webkit-datetime-edit-meridiem-field {
+    padding-block: 0;
+  }
+  ::-webkit-calendar-picker-indicator {
+    line-height: 1;
+  }
+  :-moz-ui-invalid {
+    box-shadow: none;
+  }
+  button, input:where([type='button'], [type='reset'], [type='submit']), ::file-selector-button {
+    appearance: button;
+  }
+  ::-webkit-inner-spin-button, ::-webkit-outer-spin-button {
+    height: auto;
+  }
+  [hidden]:where(:not([hidden='until-found'])) {
+    display: none!important;
+  }
+}
+@layer utilities {
+  .absolute {
+    position: absolute;
+  }
+  .fixed {
+    position: fixed;
+  }
+  .relative {
+    position: relative;
+  }
+  .inset-0 {
+    inset: calc(var(--spacing) * 0);
+  }
+  .top-0 {
+    top: calc(var(--spacing) * 0);
+  }
+  .left-0 {
+    left: calc(var(--spacing) * 0);
+  }
+  .z-50 {
+    z-index: 50;
+  }
+  .mt-4 {
+    margin-top: calc(var(--spacing) * 4);
+  }
+  .mt-6 {
+    margin-top: calc(var(--spacing) * 6);
+  }
+  .mb-2 {
+    margin-bottom: calc(var(--spacing) * 2);
+  }
+  .mb-3 {
+    margin-bottom: calc(var(--spacing) * 3);
+  }
+  .mb-4 {
+    margin-bottom: calc(var(--spacing) * 4);
+  }
+  .mb-8 {
+    margin-bottom: calc(var(--spacing) * 8);
+  }
+  .block {
+    display: block;
+  }
+  .flex {
+    display: flex;
+  }
+  .hidden {
+    display: none;
+  }
+  .min-h-screen {
+    min-height: 100vh;
+  }
+  .w-full {
+    width: 100%;
+  }
+  .max-w-md {
+    max-width: var(--container-md);
+  }
+  .transform {
+    transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
+  }
+  .cursor-not-allowed {
+    cursor: not-allowed;
+  }
+  .items-center {
+    align-items: center;
+  }
+  .justify-center {
+    justify-content: center;
+  }
+  .space-y-3 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 3) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 3) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .space-y-6 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 6) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 6) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .overflow-hidden {
+    overflow: hidden;
+  }
+  .rounded-2xl {
+    border-radius: var(--radius-2xl);
+  }
+  .rounded-lg {
+    border-radius: var(--radius-lg);
+  }
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
+  .border-white\/20 {
+    border-color: color-mix(in srgb, #fff 20%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      border-color: color-mix(in oklab, var(--color-white) 20%, transparent);
+    }
+  }
+  .bg-black\/50 {
+    background-color: color-mix(in srgb, #000 50%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-black) 50%, transparent);
+    }
+  }
+  .bg-white {
+    background-color: var(--color-white);
+  }
+  .bg-white\/10 {
+    background-color: color-mix(in srgb, #fff 10%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-white) 10%, transparent);
+    }
+  }
+  .bg-white\/20 {
+    background-color: color-mix(in srgb, #fff 20%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-white) 20%, transparent);
+    }
+  }
+  .p-4 {
+    padding: calc(var(--spacing) * 4);
+  }
+  .p-8 {
+    padding: calc(var(--spacing) * 8);
+  }
+  .px-4 {
+    padding-inline: calc(var(--spacing) * 4);
+  }
+  .py-3 {
+    padding-block: calc(var(--spacing) * 3);
+  }
+  .text-center {
+    text-align: center;
+  }
+  .text-2xl {
+    font-size: var(--text-2xl);
+    line-height: var(--tw-leading, var(--text-2xl--line-height));
+  }
+  .text-3xl {
+    font-size: var(--text-3xl);
+    line-height: var(--tw-leading, var(--text-3xl--line-height));
+  }
+  .text-4xl {
+    font-size: var(--text-4xl);
+    line-height: var(--tw-leading, var(--text-4xl--line-height));
+  }
+  .text-sm {
+    font-size: var(--text-sm);
+    line-height: var(--tw-leading, var(--text-sm--line-height));
+  }
+  .font-bold {
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+  }
+  .font-medium {
+    --tw-font-weight: var(--font-weight-medium);
+    font-weight: var(--font-weight-medium);
+  }
+  .font-semibold {
+    --tw-font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-semibold);
+  }
+  .text-purple-600 {
+    color: var(--color-purple-600);
+  }
+  .text-white {
+    color: var(--color-white);
+  }
+  .text-white\/80 {
+    color: color-mix(in srgb, #fff 80%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      color: color-mix(in oklab, var(--color-white) 80%, transparent);
+    }
+  }
+  .text-white\/90 {
+    color: color-mix(in srgb, #fff 90%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      color: color-mix(in oklab, var(--color-white) 90%, transparent);
+    }
+  }
+  .placeholder-white\/50 {
+    &::placeholder {
+      color: color-mix(in srgb, #fff 50%, transparent);
+      @supports (color: color-mix(in lab, red, red)) {
+        color: color-mix(in oklab, var(--color-white) 50%, transparent);
+      }
+    }
+  }
+  .backdrop-blur-sm {
+    --tw-backdrop-blur: blur(var(--blur-sm));
+    -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
+    backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
+  }
+  .transition-all {
+    transition-property: all;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .transition-colors {
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .hover\:scale-105 {
+    &:hover {
+      @media (hover: hover) {
+        --tw-scale-x: 105%;
+        --tw-scale-y: 105%;
+        --tw-scale-z: 105%;
+        scale: var(--tw-scale-x) var(--tw-scale-y);
+      }
+    }
+  }
+  .hover\:bg-white\/30 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: color-mix(in srgb, #fff 30%, transparent);
+        @supports (color: color-mix(in lab, red, red)) {
+          background-color: color-mix(in oklab, var(--color-white) 30%, transparent);
+        }
+      }
+    }
+  }
+  .hover\:bg-white\/90 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: color-mix(in srgb, #fff 90%, transparent);
+        @supports (color: color-mix(in lab, red, red)) {
+          background-color: color-mix(in oklab, var(--color-white) 90%, transparent);
+        }
+      }
+    }
+  }
+  .hover\:text-white {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-white);
+      }
+    }
+  }
+  .focus\:ring-2 {
+    &:focus {
+      --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
+      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+    }
+  }
+  .focus\:ring-white\/30 {
+    &:focus {
+      --tw-ring-color: color-mix(in srgb, #fff 30%, transparent);
+      @supports (color: color-mix(in lab, red, red)) {
+        --tw-ring-color: color-mix(in oklab, var(--color-white) 30%, transparent);
+      }
+    }
+  }
+  .focus\:outline-none {
+    &:focus {
+      --tw-outline-style: none;
+      outline-style: none;
+    }
+  }
+}
+@property --tw-rotate-x {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-rotate-y {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-rotate-z {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-skew-x {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-skew-y {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-space-y-reverse {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-blur {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-brightness {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-contrast {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-grayscale {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-hue-rotate {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-invert {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-opacity {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-saturate {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-sepia {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-scale-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+@property --tw-scale-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+@property --tw-scale-z {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+@property --tw-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-inset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-inset-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-inset-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-inset-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-inset-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-ring-inset {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ring-offset-width {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+@property --tw-ring-offset-color {
+  syntax: "*";
+  inherits: false;
+  initial-value: #fff;
+}
+@property --tw-ring-offset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+    *, ::before, ::after, ::backdrop {
+      --tw-rotate-x: initial;
+      --tw-rotate-y: initial;
+      --tw-rotate-z: initial;
+      --tw-skew-x: initial;
+      --tw-skew-y: initial;
+      --tw-space-y-reverse: 0;
+      --tw-border-style: solid;
+      --tw-font-weight: initial;
+      --tw-backdrop-blur: initial;
+      --tw-backdrop-brightness: initial;
+      --tw-backdrop-contrast: initial;
+      --tw-backdrop-grayscale: initial;
+      --tw-backdrop-hue-rotate: initial;
+      --tw-backdrop-invert: initial;
+      --tw-backdrop-opacity: initial;
+      --tw-backdrop-saturate: initial;
+      --tw-backdrop-sepia: initial;
+      --tw-scale-x: 1;
+      --tw-scale-y: 1;
+      --tw-scale-z: 1;
+      --tw-shadow: 0 0 #0000;
+      --tw-shadow-color: initial;
+      --tw-shadow-alpha: 100%;
+      --tw-inset-shadow: 0 0 #0000;
+      --tw-inset-shadow-color: initial;
+      --tw-inset-shadow-alpha: 100%;
+      --tw-ring-color: initial;
+      --tw-ring-shadow: 0 0 #0000;
+      --tw-inset-ring-color: initial;
+      --tw-inset-ring-shadow: 0 0 #0000;
+      --tw-ring-inset: initial;
+      --tw-ring-offset-width: 0px;
+      --tw-ring-offset-color: #fff;
+      --tw-ring-offset-shadow: 0 0 #0000;
+    }
+  }
+}
+
+        body {
+            box-sizing: border-box;
+        }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .slide-enter {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        
+        .slide-exit {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+        
+        .slide-active {
+            transform: translateX(0);
+            opacity: 1;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .pulse-glow {
+            animation: pulseGlow 2s infinite;
+        }
+        
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 20px rgba(102, 126, 234, 0.3); }
+            50% { box-shadow: 0 0 30px rgba(102, 126, 234, 0.6); }
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen">
+    <div class="min-h-screen flex items-center justify-center p-4">
+        <div class="w-full max-w-md">
+            <div class="glass-effect rounded-2xl p-8 pulse-glow">
+                <div class="text-center mb-8">
+                    <h1 class="text-4xl font-bold text-white mb-2 floating">Join</h1>
+                    <p class="text-white/80" id="subtitle">Welcome back! Please log in to your account</p>
+                </div>
+                
+                <div class="relative overflow-hidden">
+                    <div id="loginForm" class="slide-active">
+                        <form id="loginFormElement" class="space-y-6">
+                            <div>
+                                <label class="block text-white/90 text-sm font-medium mb-2">Username or Email</label>
+                                <input type="text" name="identifier" required 
+                                       class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/30 transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-white/90 text-sm font-medium mb-2">Password</label>
+                                <input type="password" name="password" required 
+                                       class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/30 transition-all">
+                            </div>
+                            <button type="submit" 
+                                    class="w-full bg-white text-purple-600 py-3 rounded-lg font-semibold hover:bg-white/90 transition-all transform hover:scale-105">
+                                Log In
+                            </button>
+                        </form>
+                        
+                        <div class="mt-6 space-y-3 text-center">
+                            <button onclick="showSignup()" class="text-white/80 hover:text-white transition-colors text-sm">
+                                New here? <span class="font-semibold">Sign up</span>
+                            </button>
+                            <br>
+                            <button onclick="showForgotPassword()" class="text-white/80 hover:text-white transition-colors text-sm">
+                                I forgot my account
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div id="signupForm" class="slide-enter absolute top-0 left-0 w-full">
+                        <form id="signupFormElement" class="space-y-6">
+                            <div>
+                                <label class="block text-white/90 text-sm font-medium mb-2">Username</label>
+                                <input type="text" name="username" required 
+                                       class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/30 transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-white/90 text-sm font-medium mb-2">Email</label>
+                                <input type="email" name="email" required 
+                                       class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/30 transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-white/90 text-sm font-medium mb-2">Password</label>
+                                <input type="password" name="password" required 
+                                       class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/30 transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-white/90 text-sm font-medium mb-2">Re-enter Password</label>
+                                <input type="password" name="confirmPassword" required 
+                                       class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/30 transition-all">
+                            </div>
+                            <button type="submit" 
+                                    class="w-full bg-white text-purple-600 py-3 rounded-lg font-semibold hover:bg-white/90 transition-all transform hover:scale-105">
+                                Sign Up
+                            </button>
+                        </form>
+                        
+                        <div class="mt-6 text-center">
+                            <button onclick="showLogin()" class="text-white/80 hover:text-white transition-colors text-sm">
+                                Already have an account? <span class="font-semibold">log in</span>
+                            </button>
+                            <br>
+                            <button onclick="showTrustInfo()" class="text-white/80 hover:text-white transition-colors text-sm">
+                                I don't trust to make an account
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="verifyForm" class="slide-enter absolute top-0 left-0 w-full">
+                        <form id="verifyFormElement" class="space-y-6">
+                            <div>
+                                <label class="block text-white/90 text-sm font-medium mb-2">Verification Code</label>
+                                <input type="text" name="verificationCode" required 
+                                       class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/30 transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-white/90 text-sm font-medium mb-2">Email</label>
+                                <input type="email" name="email" required readonly
+                                       class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/30 transition-all cursor-not-allowed">
+                            </div>
+                            <button type="submit" 
+                                    class="w-full bg-white text-purple-600 py-3 rounded-lg font-semibold hover:bg-white/90 transition-all transform hover:scale-105">
+                                Verify Account
+                            </button>
+                        </form>
+                        
+                        <div class="mt-6 space-y-3 text-center">
+                            <button onclick="showLogin()" class="text-white/80 hover:text-white transition-colors text-sm">
+                                Back to <span class="font-semibold">log in</span>
+                            </button>
+                            <br>
+                            <button onclick="resendCode()" class="text-white/80 hover:text-white transition-colors text-sm">
+                                Resend Code
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div id="forgotForm" class="slide-enter absolute top-0 left-0 w-full">
+                        <form id="forgotFormElement" class="space-y-6">
+                            <div>
+                                <label class="block text-white/90 text-sm font-medium mb-2">Username or Email</label>
+                                <input type="text" name="identifier" required 
+                                       class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/30 transition-all">
+                            </div>
+                            <button type="submit" 
+                                    class="w-full bg-white text-purple-600 py-3 rounded-lg font-semibold hover:bg-white/90 transition-all transform hover:scale-105">
+                                Reset Password
+                            </button>
+                        </form>
+                        
+                        <div class="mt-6 space-y-3 text-center">
+                            <button onclick="showLogin()" class="text-white/80 hover:text-white transition-colors text-sm">
+                                Back to <span class="font-semibold">log in</span>
+                            </button>
+                            <br>
+                            <button onclick="showSupport()" class="text-white/80 hover:text-white transition-colors text-sm">
+                                I don't remember, contact support
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div id="resetCodeForm" class="slide-enter absolute top-0 left-0 w-full">
+                        <form id="resetCodeFormElement" class="space-y-6">
+                            <div>
+                                <label class="block text-white/90 text-sm font-medium mb-2">Reset Code</label>
+                                <input type="text" name="resetCode" required 
+                                       class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/30 transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-white/90 text-sm font-medium mb-2">New Password</label>
+                                <input type="password" name="newPassword" required 
+                                       class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/30 transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-white/90 text-sm font-medium mb-2">Confirm New Password</label>
+                                <input type="password" name="confirmNewPassword" required 
+                                       class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/30 transition-all">
+                            </div>
+                            <button type="submit" 
+                                    class="w-full bg-white text-purple-600 py-3 rounded-lg font-semibold hover:bg-white/90 transition-all transform hover:scale-105">
+                                Update Password
+                            </button>
+                        </form>
+                        
+                        <div class="mt-6 text-center">
+                            <button onclick="showLogin()" class="text-white/80 hover:text-white transition-colors text-sm">
+                                Back to <span class="font-semibold">log in</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="trustModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden items-center justify-center p-4 z-50">
+                <div class="glass-effect rounded-2xl p-8 max-w-md w-full fade-in">
+                    <h3 class="text-2xl font-bold text-white mb-4">Why Trust Us?</h3>
+                    <div class="text-white/90 space-y-3 text-sm">
+                        <p>We never sell your email or send unwanted messages. You still have full 
+                            access to ImagePeel models with no limits without having an account.
+                             An account only helps to organize your experience when using ImagePeel</p>
+                    </div>
+                    <button onclick="closeTrustModal()" 
+                            class="w-full mt-6 bg-white text-purple-600 py-3 rounded-lg font-semibold hover:bg-white/90 transition-all">
+                        Got it, thanks!
+                    </button>
+                </div>
+            </div>
+            
+            <div id="supportModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden items-center justify-center p-4 z-50">
+                <div class="glass-effect rounded-2xl p-8 max-w-md w-full fade-in">
+                    <h3 class="text-2xl font-bold text-white mb-4">Contact Support</h3>
+                    <div class="text-center">
+                        <p class="text-white/90 mb-4">Need help? Reach out to our support team:</p>
+                        <div class="text-3xl font-bold text-white mb-4">support@imagepeel.com</div>
+                        <button onclick="openEmailClient()" 
+                                class="w-full bg-white text-purple-600 py-3 rounded-lg font-semibold hover:bg-white/90 transition-all mb-3">
+                            Open Email App
+                        </button>
+                        <button onclick="closeSupportModal()" 
+                                class="w-full bg-white/20 text-white py-3 rounded-lg font-semibold hover:bg-white/30 transition-all">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="messageContainer" class="mt-4 hidden">
+                <div id="messageBox" class="glass-effect rounded-lg p-4 text-center">
+                    <div id="messageText" class="text-white font-medium"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let currentForm = 'login';
+        let pendingVerificationEmail = '';
+        
+        function showForm(formName) {
+            const forms = ['loginForm', 'signupForm', 'forgotForm', 'resetCodeForm', 'verifyForm'];
+            const subtitles = {
+                login: 'Welcome back! Please log in to your account',
+                signup: 'Create your account to get started',
+                verify: 'A verification code was sent to your email',
+                forgot: 'Enter your details to reset your password',
+                resetCode: 'Enter the code sent to your email'
+            };
+
+            if (formName === 'verify') {
+                 document.getElementById('verifyForm').querySelector('input[name="email"]').value = pendingVerificationEmail;
+            }
+            
+            forms.forEach(form => {
+                const element = document.getElementById(form);
+                if (form === formName + 'Form') {
+                    element.className = 'slide-active';
+                } else {
+                    element.className = 'slide-enter absolute top-0 left-0 w-full';
+                }
+            });
+            
+            document.getElementById('subtitle').textContent = subtitles[formName];
+            currentForm = formName;
+            hideMessage();
+        }
+        
+        function showLogin() { showForm('login'); }
+        function showSignup() { showForm('signup'); }
+        function showVerify() { showForm('verify'); }
+        function showForgotPassword() { showForm('forgot'); }
+        function showResetCode() { showForm('resetCode'); }
+        
+        function showTrustInfo() {
+            document.getElementById('trustModal').classList.remove('hidden');
+            document.getElementById('trustModal').classList.add('flex');
+        }
+        
+        function closeTrustModal() {
+            document.getElementById('trustModal').classList.add('hidden');
+            document.getElementById('trustModal').classList.remove('flex');
+        }
+        
+        function showSupport() {
+            document.getElementById('supportModal').classList.remove('hidden');
+            document.getElementById('supportModal').classList.add('flex');
+            openEmailClient();
+        }
+        
+        function closeSupportModal() {
+            document.getElementById('supportModal').classList.add('hidden');
+            document.getElementById('supportModal').classList.remove('flex');
+        }
+        
+        function openEmailClient() {
+            window.open('mailto:support@imagepeel.com?subject=Account Support Request', '_blank');
+        }
+
+        async function resendCode() {
+            hideMessage();
+            if (!pendingVerificationEmail) {
+                showMessage('Error: No email to resend code to.', true);
+                return;
+            }
+            
+            const formData = new FormData();
+            formData.set('method', 'resend');
+            formData.set('email', pendingVerificationEmail);
+
+            try {
+                const response = await fetch('/join', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                if (response.ok) {
+                    showMessage('New code sent! Check your email.', false);
+                } else {
+                    showMessage('Too early to get a new code. Wait 1 minute between each', true);
+                }
+            } catch (error) {
+                showMessage('Connection error. Please try again.', true);
+            }
+        }
+        
+        function showMessage(text, isError = false) {
+            const container = document.getElementById('messageContainer');
+            const box = document.getElementById('messageBox');
+            const textElement = document.getElementById('messageText');
+            
+            textElement.textContent = text;
+            box.className = `glass-effect rounded-lg p-4 text-center ${isError ? 'border-red-400' : 'border-green-400'}`;
+            container.classList.remove('hidden');
+            container.classList.add('fade-in');
+        }
+        
+        function hideMessage() {
+            document.getElementById('messageContainer').classList.add('hidden');
+        }
+        
+        document.getElementById('loginFormElement').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            formData.set('method', 'login');
+            
+            try {
+                const response = await fetch('/join', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                if (response.ok) {
+                    const result = await response.json();
+                    showMessage('Login successful! Redirecting...', false);
+                    localStorage.setItem('access_token', result.access_token);
+                    setTimeout(() => {
+                        window.location.pathname = '/';
+                    }, 1500);
+                } else {
+                    showMessage('Login failed. Please check your credentials.', true);
+                }
+            } catch (error) {
+                showMessage('Connection error. Please try again.', true);
+            }
+        });
+        
+        document.getElementById('signupFormElement').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            formData.set('method', 'signup');
+            
+            if (formData.get('password') !== formData.get('confirmPassword')) {
+                showMessage('Passwords do not match!', true);
+                return;
+            }
+            
+            try {
+                const response = await fetch('/join', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                if (response.ok) {
+                    pendingVerificationEmail = formData.get('email');
+                    showMessage('Account created! Check your email for a verification code.', false);
+                    setTimeout(() => showVerify(), 1000);
+                } else {
+                    showMessage('Signup failed. Please try again.', true);
+                }
+            } catch (error) {
+                showMessage('Connection error. Please try again.', true);
+            }
+        });
+
+        document.getElementById('verifyFormElement').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            formData.set('method', 'verify');
+            try {
+                const response = await fetch('/join', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                if (response.ok) {
+                    showMessage('Verification successful! You can now log in.', false);
+                    pendingVerificationEmail = '';
+                    setTimeout(() => showLogin(), 2000);
+                } else {
+                    showMessage('Invalid verification code. Please try again.', true);
+                }
+            } catch (error) {
+                showMessage('Connection error. Please try again.', true);
+            }
+        });
+        
+        document.getElementById('forgotFormElement').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            formData.set('method', 'forgot');
+            
+            try {
+                const response = await fetch('/join', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                if (response.ok) {
+                    showMessage('Reset code sent! Check your email.', false);
+                    setTimeout(() => showResetCode(), 1000);
+                } else {
+                    showMessage('Account not found. Please check your details.', true);
+                }
+            } catch (error) {
+                showMessage('Connection error. Please try again.', true);
+            }
+        });
+        
+        document.getElementById('resetCodeFormElement').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            formData.set('method', 'reset');
+            
+            if (formData.get('newPassword') !== formData.get('confirmNewPassword')) {
+                showMessage('Passwords do not match!', true);
+                return;
+            }
+            
+            try {
+                const response = await fetch('/join', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                if (response.ok) {
+                    showMessage('Password updated successfully!', false);
+                    setTimeout(() => showLogin(), 2000);
+                } else {
+                    showMessage('Invalid reset code. Please try again.', true);
+                }
+            } catch (error) {
+                showMessage('Connection error. Please try again.', true);
+            }
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98c16155a7a7dbec',t:'MTc2MDA0OTYzMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

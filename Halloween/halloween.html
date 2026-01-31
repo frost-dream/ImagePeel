@@ -1,0 +1,2677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Effortlessly remove backgrounds, upscale images, cartoonize photos, create stunning visuals with AI-powered tools, and convert text to speech." />
+    <title>AI Tools 🎃: All in one!</title>
+    <link rel="icon" href="static/icon.png">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "ImagePeel",
+      "url": "https://imagepeel.com",
+      "alternateName": "Image Peel"
+    }
+    </script>
+
+    <style>
+@layer theme {
+  :root, :host {
+    --font-sans: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji';
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
+    monospace;
+    --color-red-50: oklch(97.1% 0.013 17.38);
+    --color-red-400: oklch(70.4% 0.191 22.216);
+    --color-red-500: oklch(63.7% 0.237 25.331);
+    --color-red-600: oklch(57.7% 0.245 27.325);
+    --color-red-700: oklch(50.5% 0.213 27.518);
+    --color-green-50: oklch(98.2% 0.018 155.826);
+    --color-green-400: oklch(79.2% 0.209 151.711);
+    --color-green-600: oklch(62.7% 0.194 149.214);
+    --color-green-700: oklch(52.7% 0.154 150.069);
+    --color-blue-50: oklch(97% 0.014 254.604);
+    --color-blue-100: oklch(93.2% 0.032 255.585);
+    --color-blue-400: oklch(70.7% 0.165 254.624);
+    --color-blue-600: oklch(54.6% 0.245 262.881);
+    --color-blue-800: oklch(42.4% 0.199 265.638);
+    --color-purple-50: oklch(97.7% 0.014 308.299);
+    --color-purple-400: oklch(71.4% 0.203 305.504);
+    --color-purple-500: oklch(62.7% 0.265 303.9);
+    --color-purple-600: oklch(55.8% 0.288 302.321);
+    --color-purple-700: oklch(49.6% 0.265 301.924);
+    --color-gray-50: oklch(98.5% 0.002 247.839);
+    --color-gray-100: oklch(96.7% 0.003 264.542);
+    --color-gray-200: oklch(92.8% 0.006 264.531);
+    --color-gray-300: oklch(87.2% 0.01 258.338);
+    --color-gray-400: oklch(70.7% 0.022 261.325);
+    --color-gray-500: oklch(55.1% 0.027 264.364);
+    --color-gray-600: oklch(44.6% 0.03 256.802);
+    --color-gray-700: oklch(37.3% 0.034 259.733);
+    --color-gray-800: oklch(27.8% 0.033 256.848);
+    --color-gray-900: oklch(21% 0.034 264.665);
+    --color-black: #000;
+    --color-white: #fff;
+    --spacing: 0.25rem;
+    --container-sm: 24rem;
+    --container-lg: 32rem;
+    --container-xl: 36rem;
+    --container-4xl: 56rem;
+    --container-6xl: 72rem;
+    --container-7xl: 80rem;
+    --text-sm: 0.875rem;
+    --text-sm--line-height: calc(1.25 / 0.875);
+    --text-base: 1rem;
+    --text-base--line-height: calc(1.5 / 1);
+    --text-lg: 1.125rem;
+    --text-lg--line-height: calc(1.75 / 1.125);
+    --text-xl: 1.25rem;
+    --text-xl--line-height: calc(1.75 / 1.25);
+    --text-2xl: 1.5rem;
+    --text-2xl--line-height: calc(2 / 1.5);
+    --text-3xl: 1.875rem;
+    --text-3xl--line-height: calc(2.25 / 1.875);
+    --text-4xl: 2.25rem;
+    --text-4xl--line-height: calc(2.5 / 2.25);
+    --text-5xl: 3rem;
+    --text-5xl--line-height: 1;
+    --text-7xl: 4.5rem;
+    --text-7xl--line-height: 1;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-extrabold: 800;
+    --tracking-wider: 0.05em;
+    --leading-tight: 1.25;
+    --radius-lg: 0.5rem;
+    --radius-xl: 0.75rem;
+    --radius-2xl: 1rem;
+    --radius-3xl: 1.5rem;
+    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    --animate-spin: spin 1s linear infinite;
+    --default-transition-duration: 150ms;
+    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    --default-font-family: var(--font-sans);
+    --default-mono-font-family: var(--font-mono);
+  }
+}
+@layer base {
+  *, ::after, ::before, ::backdrop, ::file-selector-button {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0 solid;
+  }
+  html, :host {
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    tab-size: 4;
+    font-family: var(--default-font-family, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji');
+    font-feature-settings: var(--default-font-feature-settings, normal);
+    font-variation-settings: var(--default-font-variation-settings, normal);
+    -webkit-tap-highlight-color: transparent;
+  }
+  hr {
+    height: 0;
+    color: inherit;
+    border-top-width: 1px;
+  }
+  abbr:where([title]) {
+    -webkit-text-decoration: underline dotted;
+    text-decoration: underline dotted;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+  a {
+    color: inherit;
+    -webkit-text-decoration: inherit;
+    text-decoration: inherit;
+  }
+  b, strong {
+    font-weight: bolder;
+  }
+  code, kbd, samp, pre {
+    font-family: var(--default-mono-font-family, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace);
+    font-feature-settings: var(--default-mono-font-feature-settings, normal);
+    font-variation-settings: var(--default-mono-font-variation-settings, normal);
+    font-size: 1em;
+  }
+  small {
+    font-size: 80%;
+  }
+  sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  sub {
+    bottom: -0.25em;
+  }
+  sup {
+    top: -0.5em;
+  }
+  table {
+    text-indent: 0;
+    border-color: inherit;
+    border-collapse: collapse;
+  }
+  :-moz-focusring {
+    outline: auto;
+  }
+  progress {
+    vertical-align: baseline;
+  }
+  summary {
+    display: list-item;
+  }
+  ol, ul, menu {
+    list-style: none;
+  }
+  img, svg, video, canvas, audio, iframe, embed, object {
+    display: block;
+    vertical-align: middle;
+  }
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+  button, input, select, optgroup, textarea, ::file-selector-button {
+    font: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    border-radius: 0;
+    background-color: transparent;
+    opacity: 1;
+  }
+  :where(select:is([multiple], [size])) optgroup {
+    font-weight: bolder;
+  }
+  :where(select:is([multiple], [size])) optgroup option {
+    padding-inline-start: 20px;
+  }
+  ::file-selector-button {
+    margin-inline-end: 4px;
+  }
+  ::placeholder {
+    opacity: 1;
+  }
+  @supports (not (-webkit-appearance: -apple-pay-button)) or (contain-intrinsic-size: 1px) {
+    ::placeholder {
+      color: currentcolor;
+      @supports (color: color-mix(in lab, red, red)) {
+        color: color-mix(in oklab, currentcolor 50%, transparent);
+      }
+    }
+  }
+  textarea {
+    resize: vertical;
+  }
+  ::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+  ::-webkit-date-and-time-value {
+    min-height: 1lh;
+    text-align: inherit;
+  }
+  ::-webkit-datetime-edit {
+    display: inline-flex;
+  }
+  ::-webkit-datetime-edit-fields-wrapper {
+    padding: 0;
+  }
+  ::-webkit-datetime-edit, ::-webkit-datetime-edit-year-field, ::-webkit-datetime-edit-month-field, ::-webkit-datetime-edit-day-field, ::-webkit-datetime-edit-hour-field, ::-webkit-datetime-edit-minute-field, ::-webkit-datetime-edit-second-field, ::-webkit-datetime-edit-millisecond-field, ::-webkit-datetime-edit-meridiem-field {
+    padding-block: 0;
+  }
+  ::-webkit-calendar-picker-indicator {
+    line-height: 1;
+  }
+  :-moz-ui-invalid {
+    box-shadow: none;
+  }
+  button, input:where([type='button'], [type='reset'], [type='submit']), ::file-selector-button {
+    appearance: button;
+  }
+  ::-webkit-inner-spin-button, ::-webkit-outer-spin-button {
+    height: auto;
+  }
+  [hidden]:where(:not([hidden='until-found'])) {
+    display: none!important;
+  }
+}
+@layer utilities {
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border-width: 0;
+  }
+  .absolute {
+    position: absolute;
+  }
+  .fixed {
+    position: fixed;
+  }
+  .sticky {
+    position: sticky;
+  }
+  .inset-0 {
+    inset: calc(var(--spacing) * 0);
+  }
+  .top-0 {
+    top: calc(var(--spacing) * 0);
+  }
+  .z-10 {
+    z-index: 10;
+  }
+  .z-40 {
+    z-index: 40;
+  }
+  .z-50 {
+    z-index: 50;
+  }
+  .mx-auto {
+    margin-inline: auto;
+  }
+  .mt-2 {
+    margin-top: calc(var(--spacing) * 2);
+  }
+  .mt-4 {
+    margin-top: calc(var(--spacing) * 4);
+  }
+  .mt-6 {
+    margin-top: calc(var(--spacing) * 6);
+  }
+  .mt-8 {
+    margin-top: calc(var(--spacing) * 8);
+  }
+  .mr-2 {
+    margin-right: calc(var(--spacing) * 2);
+  }
+  .mr-3 {
+    margin-right: calc(var(--spacing) * 3);
+  }
+  .mb-1 {
+    margin-bottom: calc(var(--spacing) * 1);
+  }
+  .mb-2 {
+    margin-bottom: calc(var(--spacing) * 2);
+  }
+  .mb-3 {
+    margin-bottom: calc(var(--spacing) * 3);
+  }
+  .mb-4 {
+    margin-bottom: calc(var(--spacing) * 4);
+  }
+  .mb-6 {
+    margin-bottom: calc(var(--spacing) * 6);
+  }
+  .mb-8 {
+    margin-bottom: calc(var(--spacing) * 8);
+  }
+  .mb-12 {
+    margin-bottom: calc(var(--spacing) * 12);
+  }
+  .-ml-1 {
+    margin-left: calc(var(--spacing) * -1);
+  }
+  .block {
+    display: block;
+  }
+  .flex {
+    display: flex;
+  }
+  .grid {
+    display: grid;
+  }
+  .hidden {
+    display: none;
+  }
+  .inline {
+    display: inline;
+  }
+  .inline-flex {
+    display: inline-flex;
+  }
+  .h-2 {
+    height: calc(var(--spacing) * 2);
+  }
+  .h-5 {
+    height: calc(var(--spacing) * 5);
+  }
+  .h-6 {
+    height: calc(var(--spacing) * 6);
+  }
+  .h-16 {
+    height: calc(var(--spacing) * 16);
+  }
+  .h-20 {
+    height: calc(var(--spacing) * 20);
+  }
+  .h-64 {
+    height: calc(var(--spacing) * 64);
+  }
+  .max-h-\[70vh\] {
+    max-height: 70vh;
+  }
+  .max-h-\[90vh\] {
+    max-height: 90vh;
+  }
+  .max-h-full {
+    max-height: 100%;
+  }
+  .min-h-screen {
+    min-height: 100vh;
+  }
+  .w-5 {
+    width: calc(var(--spacing) * 5);
+  }
+  .w-6 {
+    width: calc(var(--spacing) * 6);
+  }
+  .w-16 {
+    width: calc(var(--spacing) * 16);
+  }
+  .w-20 {
+    width: calc(var(--spacing) * 20);
+  }
+  .w-32 {
+    width: calc(var(--spacing) * 32);
+  }
+  .w-64 {
+    width: calc(var(--spacing) * 64);
+  }
+  .w-fit {
+    width: fit-content;
+  }
+  .w-full {
+    width: 100%;
+  }
+  .max-w-4xl {
+    max-width: var(--container-4xl);
+  }
+  .max-w-6xl {
+    max-width: var(--container-6xl);
+  }
+  .max-w-7xl {
+    max-width: var(--container-7xl);
+  }
+  .max-w-full {
+    max-width: 100%;
+  }
+  .max-w-lg {
+    max-width: var(--container-lg);
+  }
+  .max-w-sm {
+    max-width: var(--container-sm);
+  }
+  .max-w-xl {
+    max-width: var(--container-xl);
+  }
+  .flex-shrink-0 {
+    flex-shrink: 0;
+  }
+  .scale-90 {
+    --tw-scale-x: 90%;
+    --tw-scale-y: 90%;
+    --tw-scale-z: 90%;
+    scale: var(--tw-scale-x) var(--tw-scale-y);
+  }
+  .scale-100 {
+    --tw-scale-x: 100%;
+    --tw-scale-y: 100%;
+    --tw-scale-z: 100%;
+    scale: var(--tw-scale-x) var(--tw-scale-y);
+  }
+  .transform {
+    transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
+  }
+  .animate-spin {
+    animation: var(--animate-spin);
+  }
+  .cursor-pointer {
+    cursor: pointer;
+  }
+  .appearance-none {
+    appearance: none;
+  }
+  .grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  .grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .items-center {
+    align-items: center;
+  }
+  .justify-between {
+    justify-content: space-between;
+  }
+  .justify-center {
+    justify-content: center;
+  }
+  .gap-3 {
+    gap: calc(var(--spacing) * 3);
+  }
+  .gap-4 {
+    gap: calc(var(--spacing) * 4);
+  }
+  .gap-8 {
+    gap: calc(var(--spacing) * 8);
+  }
+  .space-y-4 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 4) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .space-x-4 {
+    :where(& > :not(:last-child)) {
+      --tw-space-x-reverse: 0;
+      margin-inline-start: calc(calc(var(--spacing) * 4) * var(--tw-space-x-reverse));
+      margin-inline-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-x-reverse)));
+    }
+  }
+  .overflow-hidden {
+    overflow: hidden;
+  }
+  .overflow-x-auto {
+    overflow-x: auto;
+  }
+  .rounded-2xl {
+    border-radius: var(--radius-2xl);
+  }
+  .rounded-3xl {
+    border-radius: var(--radius-3xl);
+  }
+  .rounded-full {
+    border-radius: calc(infinity * 1px);
+  }
+  .rounded-lg {
+    border-radius: var(--radius-lg);
+  }
+  .rounded-xl {
+    border-radius: var(--radius-xl);
+  }
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
+  .border-2 {
+    border-style: var(--tw-border-style);
+    border-width: 2px;
+  }
+  .border-4 {
+    border-style: var(--tw-border-style);
+    border-width: 4px;
+  }
+  .border-dashed {
+    --tw-border-style: dashed;
+    border-style: dashed;
+  }
+  .border-gray-200 {
+    border-color: var(--color-gray-200);
+  }
+  .border-gray-300 {
+    border-color: var(--color-gray-300);
+  }
+  .border-gray-700 {
+    border-color: var(--color-gray-700);
+  }
+  .border-red-500 {
+    border-color: var(--color-red-500);
+  }
+  .bg-blue-100 {
+    background-color: var(--color-blue-100);
+  }
+  .bg-gray-50 {
+    background-color: var(--color-gray-50);
+  }
+  .bg-gray-100 {
+    background-color: var(--color-gray-100);
+  }
+  .bg-gray-200 {
+    background-color: var(--color-gray-200);
+  }
+  .bg-gray-900 {
+    background-color: var(--color-gray-900);
+  }
+  .bg-green-600 {
+    background-color: var(--color-green-600);
+  }
+  .bg-purple-600 {
+    background-color: var(--color-purple-600);
+  }
+  .bg-red-50 {
+    background-color: var(--color-red-50);
+  }
+  .bg-red-500 {
+    background-color: var(--color-red-500);
+  }
+  .bg-red-600 {
+    background-color: var(--color-red-600);
+  }
+  .bg-white {
+    background-color: var(--color-white);
+  }
+  .object-contain {
+    object-fit: contain;
+  }
+  .p-2 {
+    padding: calc(var(--spacing) * 2);
+  }
+  .p-3 {
+    padding: calc(var(--spacing) * 3);
+  }
+  .p-4 {
+    padding: calc(var(--spacing) * 4);
+  }
+  .p-6 {
+    padding: calc(var(--spacing) * 6);
+  }
+  .p-8 {
+    padding: calc(var(--spacing) * 8);
+  }
+  .p-12 {
+    padding: calc(var(--spacing) * 12);
+  }
+  .px-4 {
+    padding-inline: calc(var(--spacing) * 4);
+  }
+  .px-6 {
+    padding-inline: calc(var(--spacing) * 6);
+  }
+  .px-8 {
+    padding-inline: calc(var(--spacing) * 8);
+  }
+  .py-2 {
+    padding-block: calc(var(--spacing) * 2);
+  }
+  .py-3 {
+    padding-block: calc(var(--spacing) * 3);
+  }
+  .py-4 {
+    padding-block: calc(var(--spacing) * 4);
+  }
+  .py-8 {
+    padding-block: calc(var(--spacing) * 8);
+  }
+  .py-20 {
+    padding-block: calc(var(--spacing) * 20);
+  }
+  .pt-2 {
+    padding-top: calc(var(--spacing) * 2);
+  }
+  .text-center {
+    text-align: center;
+  }
+  .text-left {
+    text-align: left;
+  }
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+  .text-2xl {
+    font-size: var(--text-2xl);
+    line-height: var(--tw-leading, var(--text-2xl--line-height));
+  }
+  .text-3xl {
+    font-size: var(--text-3xl);
+    line-height: var(--tw-leading, var(--text-3xl--line-height));
+  }
+  .text-4xl {
+    font-size: var(--text-4xl);
+    line-height: var(--tw-leading, var(--text-4xl--line-height));
+  }
+  .text-5xl {
+    font-size: var(--text-5xl);
+    line-height: var(--tw-leading, var(--text-5xl--line-height));
+  }
+  .text-base {
+    font-size: var(--text-base);
+    line-height: var(--tw-leading, var(--text-base--line-height));
+  }
+  .text-lg {
+    font-size: var(--text-lg);
+    line-height: var(--tw-leading, var(--text-lg--line-height));
+  }
+  .text-sm {
+    font-size: var(--text-sm);
+    line-height: var(--tw-leading, var(--text-sm--line-height));
+  }
+  .text-xl {
+    font-size: var(--text-xl);
+    line-height: var(--tw-leading, var(--text-xl--line-height));
+  }
+  .leading-tight {
+    --tw-leading: var(--leading-tight);
+    line-height: var(--leading-tight);
+  }
+  .font-bold {
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+  }
+  .font-extrabold {
+    --tw-font-weight: var(--font-weight-extrabold);
+    font-weight: var(--font-weight-extrabold);
+  }
+  .font-medium {
+    --tw-font-weight: var(--font-weight-medium);
+    font-weight: var(--font-weight-medium);
+  }
+  .font-semibold {
+    --tw-font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-semibold);
+  }
+  .tracking-wider {
+    --tw-tracking: var(--tracking-wider);
+    letter-spacing: var(--tracking-wider);
+  }
+  .break-all {
+    word-break: break-all;
+  }
+  .text-black {
+    color: var(--color-black);
+  }
+  .text-blue-600 {
+    color: var(--color-blue-600);
+  }
+  .text-blue-800 {
+    color: var(--color-blue-800);
+  }
+  .text-gray-300 {
+    color: var(--color-gray-300);
+  }
+  .text-gray-400 {
+    color: var(--color-gray-400);
+  }
+  .text-gray-500 {
+    color: var(--color-gray-500);
+  }
+  .text-gray-600 {
+    color: var(--color-gray-600);
+  }
+  .text-gray-700 {
+    color: var(--color-gray-700);
+  }
+  .text-gray-800 {
+    color: var(--color-gray-800);
+  }
+  .text-gray-900 {
+    color: var(--color-gray-900);
+  }
+  .text-green-600 {
+    color: var(--color-green-600);
+  }
+  .text-purple-600 {
+    color: var(--color-purple-600);
+  }
+  .text-red-400 {
+    color: var(--color-red-400);
+  }
+  .text-white {
+    color: var(--color-white);
+  }
+  .uppercase {
+    text-transform: uppercase;
+  }
+  .placeholder-gray-500 {
+    &::placeholder {
+      color: var(--color-gray-500);
+    }
+  }
+  .opacity-0 {
+    opacity: 0%;
+  }
+  .opacity-25 {
+    opacity: 25%;
+  }
+  .opacity-75 {
+    opacity: 75%;
+  }
+  .opacity-90 {
+    opacity: 90%;
+  }
+  .opacity-100 {
+    opacity: 100%;
+  }
+  .shadow-2xl {
+    --tw-shadow: 0 25px 50px -12px var(--tw-shadow-color, rgb(0 0 0 / 0.25));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .shadow-inner {
+    --tw-shadow: inset 0 2px 4px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.05));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .shadow-lg {
+    --tw-shadow: 0 10px 15px -3px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 4px 6px -4px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .shadow-md {
+    --tw-shadow: 0 4px 6px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 2px 4px -2px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .transition {
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .transition-all {
+    transition-property: all;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .transition-colors {
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .duration-150 {
+    --tw-duration: 150ms;
+    transition-duration: 150ms;
+  }
+  .duration-200 {
+    --tw-duration: 200ms;
+    transition-duration: 200ms;
+  }
+  .duration-300 {
+    --tw-duration: 300ms;
+    transition-duration: 300ms;
+  }
+  .duration-500 {
+    --tw-duration: 500ms;
+    transition-duration: 500ms;
+  }
+  .ease-in-out {
+    --tw-ease: var(--ease-in-out);
+    transition-timing-function: var(--ease-in-out);
+  }
+  .hover\:scale-105 {
+    &:hover {
+      @media (hover: hover) {
+        --tw-scale-x: 105%;
+        --tw-scale-y: 105%;
+        --tw-scale-z: 105%;
+        scale: var(--tw-scale-x) var(--tw-scale-y);
+      }
+    }
+  }
+  .hover\:border-blue-400 {
+    &:hover {
+      @media (hover: hover) {
+        border-color: var(--color-blue-400);
+      }
+    }
+  }
+  .hover\:border-green-400 {
+    &:hover {
+      @media (hover: hover) {
+        border-color: var(--color-green-400);
+      }
+    }
+  }
+  .hover\:border-purple-400 {
+    &:hover {
+      @media (hover: hover) {
+        border-color: var(--color-purple-400);
+      }
+    }
+  }
+  .hover\:border-red-400 {
+    &:hover {
+      @media (hover: hover) {
+        border-color: var(--color-red-400);
+      }
+    }
+  }
+  .hover\:bg-blue-50 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-blue-50);
+      }
+    }
+  }
+  .hover\:bg-gray-100 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-gray-100);
+      }
+    }
+  }
+  .hover\:bg-gray-300 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-gray-300);
+      }
+    }
+  }
+  .hover\:bg-green-50 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-green-50);
+      }
+    }
+  }
+  .hover\:bg-green-700 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-green-700);
+      }
+    }
+  }
+  .hover\:bg-purple-50 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-purple-50);
+      }
+    }
+  }
+  .hover\:bg-purple-700 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-purple-700);
+      }
+    }
+  }
+  .hover\:bg-red-50 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-red-50);
+      }
+    }
+  }
+  .hover\:bg-red-600 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-red-600);
+      }
+    }
+  }
+  .hover\:bg-red-700 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-red-700);
+      }
+    }
+  }
+  .hover\:text-gray-800 {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-gray-800);
+      }
+    }
+  }
+  .hover\:underline {
+    &:hover {
+      @media (hover: hover) {
+        text-decoration-line: underline;
+      }
+    }
+  }
+  .hover\:shadow-md {
+    &:hover {
+      @media (hover: hover) {
+        --tw-shadow: 0 4px 6px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 2px 4px -2px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+        box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+      }
+    }
+  }
+  .focus\:border-purple-500 {
+    &:focus {
+      border-color: var(--color-purple-500);
+    }
+  }
+  .focus\:ring-4 {
+    &:focus {
+      --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(4px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
+      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+    }
+  }
+  .focus\:ring-purple-500 {
+    &:focus {
+      --tw-ring-color: var(--color-purple-500);
+    }
+  }
+  .focus\:outline-none {
+    &:focus {
+      --tw-outline-style: none;
+      outline-style: none;
+    }
+  }
+  .sm\:grid-cols-3 {
+    @media (width >= 40rem) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  .sm\:grid-cols-5 {
+    @media (width >= 40rem) {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+  }
+  .sm\:px-6 {
+    @media (width >= 40rem) {
+      padding-inline: calc(var(--spacing) * 6);
+    }
+  }
+  .md\:grid-cols-4 {
+    @media (width >= 48rem) {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+  .md\:p-10 {
+    @media (width >= 48rem) {
+      padding: calc(var(--spacing) * 10);
+    }
+  }
+  .md\:text-2xl {
+    @media (width >= 48rem) {
+      font-size: var(--text-2xl);
+      line-height: var(--tw-leading, var(--text-2xl--line-height));
+    }
+  }
+  .md\:text-4xl {
+    @media (width >= 48rem) {
+      font-size: var(--text-4xl);
+      line-height: var(--tw-leading, var(--text-4xl--line-height));
+    }
+  }
+  .md\:text-7xl {
+    @media (width >= 48rem) {
+      font-size: var(--text-7xl);
+      line-height: var(--tw-leading, var(--text-7xl--line-height));
+    }
+  }
+  .md\:text-lg {
+    @media (width >= 48rem) {
+      font-size: var(--text-lg);
+      line-height: var(--tw-leading, var(--text-lg--line-height));
+    }
+  }
+  .lg\:grid-cols-6 {
+    @media (width >= 64rem) {
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+  }
+  .lg\:px-8 {
+    @media (width >= 64rem) {
+      padding-inline: calc(var(--spacing) * 8);
+    }
+  }
+  .dark\:text-gray-100 {
+    @media (prefers-color-scheme: dark) {
+      color: var(--color-gray-100);
+    }
+  }
+  .dark\:hover\:bg-gray-700 {
+    @media (prefers-color-scheme: dark) {
+      &:hover {
+        @media (hover: hover) {
+          background-color: var(--color-gray-700);
+        }
+      }
+    }
+  }
+}
+@property --tw-scale-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+@property --tw-scale-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+@property --tw-scale-z {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+@property --tw-rotate-x {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-rotate-y {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-rotate-z {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-skew-x {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-skew-y {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-space-y-reverse {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-space-x-reverse {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --tw-leading {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-tracking {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-inset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-inset-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-inset-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-inset-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-inset-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-ring-inset {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ring-offset-width {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+@property --tw-ring-offset-color {
+  syntax: "*";
+  inherits: false;
+  initial-value: #fff;
+}
+@property --tw-ring-offset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-duration {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ease {
+  syntax: "*";
+  inherits: false;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+    *, ::before, ::after, ::backdrop {
+      --tw-scale-x: 1;
+      --tw-scale-y: 1;
+      --tw-scale-z: 1;
+      --tw-rotate-x: initial;
+      --tw-rotate-y: initial;
+      --tw-rotate-z: initial;
+      --tw-skew-x: initial;
+      --tw-skew-y: initial;
+      --tw-space-y-reverse: 0;
+      --tw-space-x-reverse: 0;
+      --tw-border-style: solid;
+      --tw-leading: initial;
+      --tw-font-weight: initial;
+      --tw-tracking: initial;
+      --tw-shadow: 0 0 #0000;
+      --tw-shadow-color: initial;
+      --tw-shadow-alpha: 100%;
+      --tw-inset-shadow: 0 0 #0000;
+      --tw-inset-shadow-color: initial;
+      --tw-inset-shadow-alpha: 100%;
+      --tw-ring-color: initial;
+      --tw-ring-shadow: 0 0 #0000;
+      --tw-inset-ring-color: initial;
+      --tw-inset-ring-shadow: 0 0 #0000;
+      --tw-ring-inset: initial;
+      --tw-ring-offset-width: 0px;
+      --tw-ring-offset-color: #fff;
+      --tw-ring-offset-shadow: 0 0 #0000;
+      --tw-duration: initial;
+      --tw-ease: initial;
+    }
+  }
+}
+
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+        }
+
+        .bat {
+          position: fixed;
+          width: auto;
+          height: auto;
+          z-index: 1000;
+          pointer-events: none;
+          top: 0;
+          left: 0;
+        }
+
+        #subscription-card header {
+          background-color: #111827;
+        }
+
+        .dark #results-section {
+          background-color: #111827;
+        }
+
+        .dark #donatePlace div {
+          background-color: #1f2937;
+        }
+
+        .dark #feedback-section {
+          background-color: black;
+        }
+
+        .dark header a {
+            color: white;
+        }
+
+        .dark #upload-section {
+          color: white;
+          background-color: #1f2937;
+        }
+
+        .dark #history-section {
+          background-color: #1f2937;
+          color: white;
+        }
+
+        .dark #gen-controls {
+          background-color: #1f2937;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .dark .gradient-bg {
+            background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+        }
+
+        .dark header {
+            background-color: #111827;
+            box-shadow: 0 4px 6px -1px rgb(255 255 255 / 0.05);
+        }
+
+        .dark .bg-white { 
+            background-color: #1f2937 !important;
+        }
+        .dark .text-gray-800 {
+            color: #f3f4f6 !important;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .drag-active {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            transform: scale(1.02);
+        }
+        
+        .upload-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        .before-after-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+        }
+
+        .before-after-container img {
+            user-select: none;
+        }
+        
+        .before-after-slider {
+            position: absolute;
+            top: 0;
+            left: 100%;
+            width: 4px;
+            height: 100%;
+            background: #fff;
+            cursor: ew-resize;
+            z-index: 10;
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+        }
+        
+        .before-after-slider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 41px;
+            height: 36px;
+            background: url('/static/Halloween/spider.png');
+        }
+
+        @keyframes moveLeft {
+            from {
+                left: 0;
+            }
+            to {
+                left: 100%;
+            }
+        }
+
+        @keyframes moveClipPath {
+            0% {
+                clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+            }
+            100% {
+                clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%);
+            }
+        }
+        
+        .before-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            z-index: 1;
+        }
+        
+        .after-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+            z-index: 2;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 2px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: #667eea;
+            width: 0%;
+            transition: width 0.1s ease;
+        }
+
+        #crypto-address {
+            cursor: pointer;
+        }
+
+        #getstarted {
+          cursor: pointer;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <img src="/static/Halloween/bat.png" class="bat" id="bat1">
+    <img src="/static/Halloween/bat.png" class="bat" id="bat2">
+    <img src="/static/Halloween/bat.png" class="bat" id="bat3">
+    
+    <div id="custom-alert-modal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-75 z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl shadow-2xl p-6 w-full max-w-sm transform transition-all duration-300 scale-100">
+            <h3 class="text-xl font-bold text-gray-800 mb-4" id="alert-title">Notice</h3>
+            <p class="text-gray-600 mb-6" id="alert-message">This is a custom alert message.</p>
+            <button onclick="document.getElementById('custom-alert-modal').classList.add('hidden')" class="w-full bg-purple-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-purple-700 transition-colors">
+                OK
+            </button>
+        </div>
+    </div>
+
+    <div id="share-alert-modal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-75 z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl shadow-2xl p-6 w-full max-w-sm transform transition-all duration-300 scale-100">
+            <h3 class="text-xl font-bold text-gray-800 mb-4">Like our service?</h3>
+            <p class="text-gray-600 mb-6">While you wait, share to support us!</p>
+            <button onclick="shareCopy()" class="w-full bg-purple-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-purple-700 transition-colors">
+                Copy
+            </button>
+        </div>
+    </div>
+
+    <header class="bg-white shadow-md sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <a href="/" class="text-2xl font-extrabold text-gray-900">
+                        <img src="static/icon.png" alt="ImagePeel Icon" class="inline h-6 w-6 mr-2">
+                        ImagPeel
+                    </a>
+                </div>
+                
+                <nav class="flex items-center space-x-4">
+                    <button id="dark-mode-toggle"
+                        class="text-gray-900 dark:text-gray-100 p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                    >
+                        ☀️
+                    </button>
+                    <button id="auth-button"
+                        onclick="window.location.pathname = '/join'" 
+                        class="bg-purple-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-purple-700 transition-colors shadow-lg"
+                    >
+                        Join
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section id="bgimage" class="gradient-bg min-h-screen flex items-center justify-center px-4">
+        <div class="text-center text-white max-w-4xl mx-auto">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6">Free Online Image Editing Tools</h1>
+            <p class="text-xl md:text-2xl mb-8 opacity-90">Try it today</p>
+            <div class="flex justify-center">
+                <button id="getstarted" onclick="scrollToUpload()" class="bg-white text-purple-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105">
+                    Get Started →
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="upload-section" class="py-20 px-4">
+        <div class="max-w-4xl mx-auto">
+            <div id="cardSelect" class="grid grid-cols-2 sm:grid-cols-5 gap-3">
+                <div onclick="selectCard(this, 'removal')" class="p-4 border-2 border-red-500 bg-red-50 rounded-lg cursor-pointer text-center hover:shadow-md transition-all">
+                    <div class="text-2xl mb-2">✂️</div>
+                    <div class="font-medium">Bg Removal</div>
+                </div>
+                <div onclick="selectCard(this, 'upscale')" class="p-4 border-2 border-gray-200 rounded-lg cursor-pointer text-center hover:shadow-md transition-all">
+                    <div class="text-2xl mb-2">🔍</div>
+                    <div class="font-medium">Upscale</div>
+                </div>
+                <div onclick="selectCard(this, 'cartoon')" class="p-4 border-2 border-gray-200 rounded-lg cursor-pointer text-center hover:shadow-md transition-all">
+                    <div class="text-2xl mb-2">🖌️</div>
+                    <div class="font-medium">Cartoonize</div>
+                </div>
+                <div onclick="selectCard(this, 'txt2img')" class="p-4 border-2 border-gray-200 rounded-lg cursor-pointer text-center hover:shadow-md transition-all">
+                    <div class="text-2xl mb-2">🖼️</div>
+                    <div class="font-medium">Text to Image</div>
+                </div>
+                <div onclick="selectCard(this, 'tts')" class="p-4 border-2 border-gray-200 rounded-lg cursor-pointer text-center hover:shadow-md transition-all">
+                    <div class="text-2xl mb-2">🔊</div>
+                    <div class="font-medium">Text to Speech</div>
+                </div>
+                <div onclick="selectCard(this, 'colorize')" class="p-4 border-2 border-gray-200 rounded-lg cursor-pointer text-center hover:shadow-md transition-all">
+                    <div class="text-2xl mb-2">🎨</div>
+                    <div class="font-medium">Colorize</div>
+                </div>
+            </div>
+
+            <div id="upscale-options" class="hidden mt-4 grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <div onclick="selectUpscaleOption(this, 'x2')" class="p-4 border-2 border-gray-200 rounded-lg cursor-pointer text-center hover:shadow-md transition-all">
+                    <div class="font-medium">x2 Upscale</div>
+                </div>
+                <div onclick="selectUpscaleOption(this, 'x3')" class="p-4 border-2 border-gray-200 rounded-lg cursor-pointer text-center hover:shadow-md transition-all">
+                    <div class="font-medium">x3 Upscale</div>
+                </div>
+                <div onclick="selectUpscaleOption(this, 'x4')" class="p-4 border-2 border-gray-200 rounded-lg cursor-pointer text-center hover:shadow-md transition-all">
+                    <div class="font-medium">x4 Upscale</div>
+                </div>
+            </div>
+
+            <div id="text-to-image-options" class="hidden mt-4 p-6 bg-white border border-gray-200 rounded-lg shadow-lg">
+                <div class="space-y-4">
+                    <div>
+                        <label for="txt2img-prompt" class="block text-sm font-medium text-gray-700 mb-1">Prompt</label>
+                        <textarea id="txt2img-prompt" rows="3" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-purple-500 focus:border-purple-500" placeholder="A stunning hyperrealistic photograph of an astronaut on Mars..."></textarea>
+                    </div>
+
+                    <div>
+                        <label for="txt2img-negative-prompt" class="block text-sm font-medium text-gray-700 mb-1">Negative Prompt</label>
+                        <textarea id="txt2img-negative-prompt" rows="2" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-purple-500 focus:border-purple-500" placeholder="blurry, low quality, bad anatomy, deformed..."></textarea>
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-4">
+                        <div>
+                            <label for="txt2img-width" class="block text-sm font-medium text-gray-700 mb-1">Width (px)</label>
+                            <input type="number" id="txt2img-width" value="512" min="128" max="1024" class="w-full p-2 border border-gray-300 rounded-lg focus:ring-purple-500 focus:border-purple-500">
+                        </div>
+                        <div>
+                            <label for="txt2img-height" class="block text-sm font-medium text-gray-700 mb-1">Height (px)</label>
+                            <input type="number" id="txt2img-height" value="512" min="128" max="1024" class="w-full p-2 border border-gray-300 rounded-lg focus:ring-purple-500 focus:border-purple-500">
+                        </div>
+                        <div>
+                            <label for="txt2img-steps" class="block text-sm font-medium text-gray-700 mb-1">Steps</label>
+                            <input type="number" id="txt2img-steps" value="1" min="1" max="100" class="w-full p-2 border border-gray-300 rounded-lg focus:ring-purple-500 focus:border-purple-500">
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-3 gap-4">
+                        <div>
+                            <label for="txt2img-cfg" class="block text-sm font-medium text-gray-700 mb-1">CFG Scale</label>
+                            <input type="number" id="txt2img-cfg" value="7.5" step="0.5" min="1" max="20" class="w-full p-2 border border-gray-300 rounded-lg focus:ring-purple-500 focus:border-purple-500">
+                        </div>
+                        <div>
+                            <label for="txt2img-seed" class="block text-sm font-medium text-gray-700 mb-1">Seed</label>
+                            <input type="number" id="txt2img-seed" value="-1" min="-1" class="w-full p-2 border border-gray-300 rounded-lg focus:ring-purple-500 focus:border-purple-500">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tts-options" class="hidden mt-4 p-6 bg-white border border-gray-200 rounded-lg shadow-lg">
+                <h3 class="text-xl font-semibold text-gray-700 mb-4">Text to Convert to Speech</h3>
+                <div>
+                    <label for="tts-prompt" class="block text-sm font-medium text-gray-700 mb-1">Speech Text (Max 1000 char)</label>
+                    <textarea id="tts-prompt" rows="5" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-purple-500 focus:border-purple-500" placeholder="Please enter some text"></textarea>
+                </div>
+                <div>
+                    <label for="tts-speed" class="block text-sm font-medium text-gray-700 mb-2">Speed (0.5x to 2.0x)</label>
+                    <input type="range" id="tts-speed" min="0.5" max="2.0" step="0.1" value="1.0" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer range-lg">
+                </div>
+
+                <div>
+                    <label for="tts-voice" class="block text-sm font-medium text-gray-700 mb-2">Voice</label>
+                    <select id="tts-voice" class="block w-full p-3 border border-gray-300 rounded-lg bg-white focus:ring-purple-500 focus:border-purple-500 transition duration-150 ease-in-out">
+                        <option value="af_alloy" selected>af_alloy</option>
+                        <option value="af_aoede">af_aoede</option>
+                        <option value="af_bella">af_bella</option>
+                        <option value="af_heart">af_heart</option>
+                        <option value="af_jessica">af_jessica</option>
+                        <option value="af_kore">af_kore</option>
+                        <option value="af_nicole">af_nicole</option>
+                        <option value="af_nova">af_nova</option>
+                        <option value="af_river">af_river</option>
+                        <option value="af_sarah">af_sarah</option>
+                        <option value="af_sky">af_sky</option>
+                        <option value="am_adam">am_adam</option>
+                        <option value="am_echo">am_echo</option>
+                        <option value="am_eric">am_eric</option>
+                        <option value="am_fenrir">am_fenrir</option>
+                        <option value="am_liam">am_liam</option>
+                        <option value="am_michael">am_michael</option>
+                        <option value="am_onyx">am_onyx</option>
+                        <option value="am_puck">am_puck</option>
+                        <option value="am_santa">am_santa</option>
+                        <option value="bf_alice">bf_alice</option>
+                        <option value="bf_emma">bf_emma</option>
+                        <option value="bf_isabella">bf_isabella</option>
+                        <option value="bf_lily">bf_lily</option>
+                        <option value="bm_daniel">bm_daniel</option>
+                        <option value="bm_fable">bm_fable</option>
+                        <option value="bm_george">bm_george</option>
+                        <option value="bm_lewis">bm_lewis</option>
+                        <option value="ef_dora">ef_dora</option>
+                        <option value="em_alex">em_alex</option>
+                        <option value="em_santa">em_santa</option>
+                        <option value="ff_siwis">ff_siwis</option>
+                        <option value="hf_alpha">hf_alpha</option>
+                        <option value="hf_beta">hf_beta</option>
+                        <option value="hm_omega">hm_omega</option>
+                        <option value="hm_psi">hm_psi</option>
+                        <option value="if_sara">if_sara</option>
+                        <option value="im_nicola">im_nicola</option>
+                        <option value="jf_alpha">jf_alpha</option>
+                        <option value="jf_gongitsune">jf_gongitsune</option>
+                        <option value="jf_nezumi">jf_nezumi</option>
+                        <option value="jf_tebukuro">jf_tebukuro</option>
+                        <option value="jm_kumo">jm_kumo</option>
+                        <option value="pf_dora">pf_dora</option>
+                        <option value="pm_alex">pm_alex</option>
+                        <option value="pm_santa">pm_santa</option>
+                        <option value="zf_xiaobei">zf_xiaobei</option>
+                        <option value="zf_xiaoni">zf_xiaoni</option>
+                        <option value="zf_xiaoxiao">zf_xiaoxiao</option>
+                        <option value="zf_xiaoyi">zf_xiaoyi</option>
+                        <option value="zm_yunjian">zm_yunjian</option>
+                        <option value="zm_yunxi">zm_yunxi</option>
+                        <option value="zm_yunxia">zm_yunxia</option>
+                        <option value="zm_yunyang">zm_yunyang</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="tts-voice-blend" class="block text-sm font-medium text-gray-700 mb-2">Voice Blend (Optional)</label>
+                    <select id="tts-voice-blend" class="block w-full p-3 border border-gray-300 rounded-lg bg-white focus:ring-purple-500 focus:border-purple-500 transition duration-150 ease-in-out">
+                        <option value="" selected>No Blend</option>
+                        <option value="af_alloy">af_alloy</option>
+                        <option value="af_aoede">af_aoede</option>
+                        <option value="af_bella">af_bella</option>
+                        <option value="af_heart">af_heart</option>
+                        <option value="af_jessica">af_jessica</option>
+                        <option value="af_kore">af_kore</option>
+                        <option value="af_nicole">af_nicole</option>
+                        <option value="af_nova">af_nova</option>
+                        <option value="af_river">af_river</option>
+                        <option value="af_sarah">af_sarah</option>
+                        <option value="af_sky">af_sky</option>
+                        <option value="am_adam">am_adam</option>
+                        <option value="am_echo">am_echo</option>
+                        <option value="am_eric">am_eric</option>
+                        <option value="am_fenrir">am_fenrir</option>
+                        <option value="am_liam">am_liam</option>
+                        <option value="am_michael">am_michael</option>
+                        <option value="am_onyx">am_onyx</option>
+                        <option value="am_puck">am_puck</option>
+                        <option value="am_santa">am_santa</option>
+                        <option value="bf_alice">bf_alice</option>
+                        <option value="bf_emma">bf_emma</option>
+                        <option value="bf_isabella">bf_isabella</option>
+                        <option value="bf_lily">bf_lily</option>
+                        <option value="bm_daniel">bm_daniel</option>
+                        <option value="bm_fable">bm_fable</option>
+                        <option value="bm_george">bm_george</option>
+                        <option value="bm_lewis">bm_lewis</option>
+                        <option value="ef_dora">ef_dora</option>
+                        <option value="em_alex">em_alex</option>
+                        <option value="em_santa">em_santa</option>
+                        <option value="ff_siwis">ff_siwis</option>
+                        <option value="hf_alpha">hf_alpha</option>
+                        <option value="hf_beta">hf_beta</option>
+                        <option value="hm_omega">hm_omega</option>
+                        <option value="hm_psi">hm_psi</option>
+                        <option value="if_sara">if_sara</option>
+                        <option value="im_nicola">im_nicola</option>
+                        <option value="jf_alpha">jf_alpha</option>
+                        <option value="jf_gongitsune">jf_gongitsune</option>
+                        <option value="jf_nezumi">jf_nezumi</option>
+                        <option value="jf_tebukuro">jf_tebukuro</option>
+                        <option value="jm_kumo">jm_kumo</option>
+                        <option value="pf_dora">pf_dora</option>
+                        <option value="pm_alex">pm_alex</option>
+                        <option value="pm_santa">pm_santa</option>
+                        <option value="zf_xiaobei">zf_xiaobei</option>
+                        <option value="zf_xiaoni">zf_xiaoni</option>
+                        <option value="zf_xiaoxiao">zf_xiaoxiao</option>
+                        <option value="zf_xiaoyi">zf_xiaoyi</option>
+                        <option value="zm_yunjian">zm_yunjian</option>
+                        <option value="zm_yunxi">zm_yunxi</option>
+                        <option value="zm_yunxia">zm_yunxia</option>
+                        <option value="zm_yunyang">zm_yunyang</option>
+                    </select>
+                </div>
+            </div>
+
+            <br><br><br>
+            <h2 id="uym" class="text-4xl font-bold text-center mb-12 text-gray-800">Upload Your Media</h2>
+            
+            <div id="upload-area" class="border-4 border-dashed border-gray-300 rounded-2xl p-12 text-center transition-all duration-300 hover:border-purple-400 hover:bg-purple-50 cursor-pointer">
+                <div id="upload-content">
+                    <div class="mb-6">
+                        <svg class="w-16 h-16 mx-auto text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-700">Drag & Drop Your Files</h3>
+                    <p class="text-gray-500 mb-6">Support for images (JPG, PNG)</p>
+                    <button class="bg-purple-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-purple-700 transition-colors">
+                        Choose Files
+                    </button>
+                </div>
+                
+                <div id="drop-overlay" class="hidden">
+                    <div class="text-3xl font-bold text-white mb-4">Drop to Upload!</div>
+                    <svg class="w-20 h-20 mx-auto text-white upload-animation" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                    </svg>
+                </div>
+            </div>
+            
+            <input type="file" id="file-input" class="hidden" accept=".jpg, .png, .jpeg">
+            
+            <div id="processing-status" class="hidden mt-8 text-center">
+                <div class="inline-flex items-center px-6 py-3 bg-blue-100 rounded-full">
+                    <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    <span class="text-blue-800 font-medium" id="processing-message">Processing your media...</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="history-section" class="py-20 px-4 hidden">
+    <div class="max-w-7xl mx-auto">
+        <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Your History</h2>
+        <div id="image-history-container" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            </div>
+        <div id="history-empty" class="hidden text-center text-gray-500 mt-8">
+            <p>Sign up to unlock history!</p>
+        </div>
+    </div>
+    </section>
+    <div id="image-modal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-75 z-50 flex items-center justify-center p-4">
+        <div class="absolute inset-0" onclick="closeImageModal()"></div>
+        <div class="bg-white rounded-xl shadow-2xl p-4 max-w-4xl max-h-[90vh] w-full transform transition-all duration-300 scale-100 z-10">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold text-gray-800" id="modal-title">Processed Image</h3>
+                <button onclick="closeImageModal()" class="text-gray-500 hover:text-gray-800">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            <div class="flex items-center justify-center max-h-[70vh]">
+                <img id="modal-image" src="" alt="User Image" class="max-w-full max-h-full object-contain rounded-lg">
+            </div>
+            <div class="mt-4 flex justify-center space-x-4">
+                <a id="modal-download-btn" href="#" download class="bg-purple-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-purple-700 transition-colors">
+                    Download
+                </a>
+                <button onclick="copyImageUrl()" class="bg-gray-200 text-gray-800 px-6 py-2 rounded-lg font-semibold hover:bg-gray-300 transition-colors">
+                    Copy Link
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <section id="gen-controls" class="hidden py-20 px-4 bg-gray-100">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mt-6">
+                <button id="gen-btn" class="bg-red-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors">
+                    Generate
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="results-section" class="hidden py-20 px-4 bg-gray-100">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Result</h2>
+            <div id="image-results" class="hidden">
+                <div id="before-after-wrapper" class="before-after-container bg-white rounded-2xl shadow-2xl overflow-hidden" style="height: 500px;">
+                    <img id="before-image" class="before-image" alt="Failed">
+                    <img id="after-image" class="after-image" alt="Background Removed/Upscaled">
+                    <div id="slider" class="before-after-slider"></div>
+                </div>
+                <div class="text-center mt-6">
+                    <button id="download-btn" class="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
+                        Download Image
+                    </button>
+                </div>
+            </div>
+
+            <div id="audio-results" class="hidden max-w-lg mx-auto p-8 bg-white rounded-xl shadow-2xl text-center">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-4">Generated Speech</h3>
+                <audio id="tts-audio-player" controls class="w-full rounded-lg shadow-inner"></audio>
+                <div class="text-center mt-6">
+                    <button id="download-audio-btn" class="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
+                        Download Audio (MP3)
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="donatePlace" class="py-20 px-4 bg-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-6 text-gray-800">Support Our Work</h2>
+            <p class="text-xl text-gray-600 mb-8">Help us keep this service free and improve our AI technology</p>
+            
+            <div class="bg-gray-100 rounded-2xl p-8 shadow-inner">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800">Donate with Crypto</h3>
+                <p class="text-gray-600 mb-4">Scan the QR code or copy the address to donate.</p>
+                
+                <div class="mb-6 mx-auto w-fit">
+                    <img src="static/qrcode.jpg" alt="USDC Crypto Address QR Code" class="w-64 h-64 border-2 border-gray-300 rounded-lg">
+                </div>
+                
+                <div class="text-left text-sm p-4 bg-gray-200 rounded-lg overflow-x-auto">
+                    <p class="font-bold text-gray-800">My Public Address to Receive USDT ethereum</p>
+                    <p id="crypto-address" class="text-purple-600 font-mono break-all mb-2 cursor-pointer">0x2ddCd08A59B2092E037a192036dD34325DF862E3</p>
+                    <p class="font-bold text-gray-800">Pay me via Trust Wallet:</p>
+                    <a href="https://link.trustwallet.com/send?coin=60&address=0x2ddCd08A59B2092E037a192036dD34325DF862E3&token_id=0xdAC17F958D2ee523a2206206994597C13D831ec7" target="_blank" class="text-purple-600 font-mono break-all hover:underline">https://link.trustwallet.com/send?coin=60&address=0x2ddCd08A59B2092E037a192036dD34325DF862E3&token_id=0xdAC17F958D2ee523a2206206994597C13D831ec7</a>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <div id="subscription-card" class="mx-auto bg-gray-900 w-full max-w-xl bg-card-bg text-white p-8 md:p-10 rounded-3xl shadow-2xl transition-all duration-500 transform scale-100 opacity-100">
+        <header class="mb-8 text-center">
+            <h1 class="text-3xl md:text-4xl font-extrabold mb-3 leading-tight">
+                Unlock Exclusive Insights
+            </h1>
+            <p class="text-gray-400 text-base md:text-lg">
+                Join our newsletter and be the first to know about new features and updates.
+            </p>
+        </header>
+
+        <form id="subscribe-form" class="space-y-4">
+            <div>
+                <label for="email" class="sr-only">Email Address</label>
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your best email address"
+                    required
+                    class="w-full p-4 text-gray-900 bg-gray-100 border border-gray-700 rounded-xl focus:ring-primary-blue focus:border-primary-blue transition duration-200 shadow-inner placeholder-gray-500"
+                >
+            </div>
+            <button
+                type="submit"
+                class="w-full gradient-button text-white font-bold py-4 rounded-xl text-lg tracking-wider uppercase focus:outline-none focus:ring-4 focus:ring-primary-blue focus:ring-opacity-50 transition duration-300 ease-in-out"
+            >
+                Subscribe Now
+            </button>
+            <p id="error-message" class="text-red-400 text-center hidden pt-2">Please enter a valid email address.</p>
+        </form>
+
+        <footer class="mt-6 text-center text-sm text-gray-500">
+            No spam, ever. Unsubscribe anytime with a single click.
+        </footer>
+    </div>
+
+    <div id="success-message" class="mx-auto bg-gray-900 w-full max-w-xl bg-card-bg text-white p-8 md:p-10 rounded-3xl shadow-2xl text-center hidden transition-all duration-500 transform scale-90 opacity-0 absolute">
+        <div class="text-primary-blue mb-4">
+            <svg class="w-16 h-16 mx-auto text-primary-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+        </div>
+        <h2 class="text-3xl font-extrabold mb-3 text-primary-purple">Success!</h2>
+        <p class="text-gray-300 text-lg">
+            You're all set. From now you receive updates from us!
+        </p>
+    </div>
+
+    <section id="feedback-section" class="py-20 px-4 bg-gray-50">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-6 text-gray-800">Was This Tool Helpful?</h2>
+            <p class="text-xl text-gray-600 mb-8">Your feedback helps us improve.</p>
+
+            <div id="feedback-options" class="flex justify-center gap-8">
+                <div onclick="submitFeedback('Good')" class="feedback-option p-6 rounded-2xl border-2 border-gray-200 bg-white cursor-pointer hover:bg-green-50 hover:border-green-400 transition-all duration-300 w-32 shadow-lg">
+                    <div class="text-4xl mb-2">👍</div>
+                    <div class="font-semibold text-gray-700">Good</div>
+                </div>
+
+                <div onclick="submitFeedback('Normal')" class="feedback-option p-6 rounded-2xl border-2 border-gray-200 bg-white cursor-pointer hover:bg-blue-50 hover:border-blue-400 transition-all duration-300 w-32 shadow-lg">
+                    <div class="text-4xl mb-2">😐</div>
+                    <div class="font-semibold text-gray-700">Normal</div>
+                </div>
+
+                <div onclick="submitFeedback('Bad')" class="feedback-option p-6 rounded-2xl border-2 border-gray-200 bg-white cursor-pointer hover:bg-red-50 hover:border-red-400 transition-all duration-300 w-32 shadow-lg">
+                    <div class="text-4xl mb-2">👎</div>
+                    <div class="font-semibold text-gray-700">Bad</div>
+                </div>
+            </div>
+
+            <div id="feedback-thank-you" class="hidden mt-8">
+                <p class="text-2xl font-semibold text-purple-600">Thank you for your feedback! 😊</p>
+                <p class="text-lg text-gray-600 mt-2">You can only submit feedback once.</p>
+                <a href="/feedback" class="text-lg text-green-600 mt-2">Go to tally</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 py-8 px-4">
+        <div class="text-center">
+            <p class="text-gray-300 text-lg">Made with 🧡</p>
+        </div>
+        <div class="text-center">
+            <p class="text-gray-300 text-lg">Support center: <a href="mailto:support@imagepeel.com">support@imagepeel.com</a></p>
+        </div>
+        <div class="text-center">
+            <p class="text-gray-300 text-lg">Direct contact: <a href="mailto:frostdream3k@gmail.com">frostdream3k@gmail.com</a></p>
+        </div>
+    </footer>
+
+    <script>
+        let cardd;
+        let upscaleOption;
+        const FEEDBACK_KEY = 'toolFeedbackSubmitted';
+        document.getElementById('bgimage').style.backgroundImage = `url(/static/Halloween/slider${Math.ceil(Math.random() * 3)}.png)`;
+
+        function moveBat(bat) {
+          const screenW = window.innerWidth;
+          const screenH = window.innerHeight;
+
+          const newX = Math.random() * (screenW - 50); // 50 = bat width
+          const newY = Math.random() * (screenH - 50);
+
+          bat.style.transition = 'transform 3s ease-in-out';
+          bat.style.transform = `translate(${newX}px, ${newY}px)`;
+        }
+
+        function startFlying(bat) {
+          moveBat(bat);
+          setInterval(() => moveBat(bat), 3000);
+        }
+
+        window.onload = () => {
+          const bat1 = document.getElementById('bat1');
+          const bat2 = document.getElementById('bat2');
+          const bat3 = document.getElementById('bat3');
+
+          startFlying(bat1);
+          startFlying(bat2);
+          startFlying(bat3);
+        };
+
+
+        function showAlert(message, title = 'Error') {
+            document.getElementById('alert-title').textContent = title;
+            document.getElementById('alert-message').textContent = message;
+            document.getElementById('custom-alert-modal').classList.remove('hidden');
+        }
+
+        function checkFeedbackStatus() {
+            const hasSubmitted = localStorage.getItem(FEEDBACK_KEY);
+            if (hasSubmitted) {
+                disableFeedback();
+            }
+        }
+
+        function disableFeedback() {
+            const options = document.getElementById('feedback-options');
+            const thankYou = document.getElementById('feedback-thank-you');
+            options.classList.add('hidden');
+            thankYou.classList.remove('hidden');
+            document.querySelectorAll('.feedback-option').forEach(el => {
+                el.style.pointerEvents = 'none';
+                el.classList.add('opacity-75', 'cursor-default');
+            });
+        }
+
+        async function submitFeedback(rating) {
+            if (localStorage.getItem(FEEDBACK_KEY)) {
+                return;
+            }
+            const resp = await fetch('/feedback', {method: 'POST', body: rating});
+            if (!resp.ok) return;
+            localStorage.setItem(FEEDBACK_KEY, 'true');
+            disableFeedback();
+            const optionElements = document.querySelectorAll('.feedback-option');
+            optionElements.forEach(el => {
+                if (el.textContent.includes(rating)) {
+                    el.classList.add('bg-purple-100', 'border-purple-600', 'shadow-2xl');
+                }
+            });
+            setTimeout(redirect, 1000);
+        }
+
+        function redirect() {
+          window.open('/feedback', '_blank');
+        }
+
+        function setupModalOutsideClickListener(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.addEventListener('click', function(event) {
+                    if (event.target === modal) {
+                        modal.classList.add('hidden');
+                    }
+                });
+            }
+        }
+
+        const THEME_KEY = 'color-theme';
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+
+        function setDarkMode(isDark) {
+            const body = document.body;
+            if (isDark) {
+                body.classList.add('dark');
+                localStorage.setItem(THEME_KEY, 'dark');
+                darkModeToggle.textContent = '🌙';
+                document.body.style.backgroundColor = '#1f2937';
+                document.body.classList.remove('bg-gray-50');
+            } else {
+                body.classList.remove('dark');
+                localStorage.setItem(THEME_KEY, 'light');
+                darkModeToggle.textContent = '☀️';
+                document.body.style.backgroundColor = '';
+                document.body.classList.add('bg-gray-50');
+            }
+        }
+
+        function toggleDarkMode() {
+            const isDark = document.body.classList.contains('dark');
+            setDarkMode(!isDark);
+        }
+
+        function loadThemePreference() {
+            const storedTheme = localStorage.getItem(THEME_KEY);
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+            if (storedTheme === 'dark' || (storedTheme === null && prefersDark)) {
+                setDarkMode(true);
+            } else {
+                setDarkMode(false);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadThemePreference(); 
+
+            if (darkModeToggle) {
+                darkModeToggle.addEventListener('click', toggleDarkMode);
+            }
+
+            checkFeedbackStatus();
+            cardd = localStorage.getItem('selectedCard') || 'removal';
+            upscaleOption = localStorage.getItem('selectedx') || 'x2';
+
+            const initialCard = document.querySelector(`[onclick="selectCard(this, '${cardd}')"]`);
+            if (initialCard) {
+                selectCard(initialCard, cardd);
+            }
+            setupModalOutsideClickListener('custom-alert-modal');
+            setupModalOutsideClickListener('share-alert-modal');
+        });
+        
+        function selectCard(card, groupName) {
+            cardd = groupName;
+            localStorage.setItem('selectedCard', groupName);
+            
+            document.getElementById('cardSelect').querySelectorAll('div').forEach(c => {
+                c.classList.remove('border-red-500', 'bg-red-50');
+                c.classList.add('border-gray-200');
+            });
+            card.classList.remove('border-gray-200');
+            card.classList.add('border-red-500', 'bg-red-50');
+
+            const upscaleOptions = document.getElementById('upscale-options');
+            const txt2imgOptions = document.getElementById('text-to-image-options');
+            const ttsOptions = document.getElementById('tts-options');
+            const genControls = document.getElementById('gen-controls');
+            const uym = document.getElementById('uym');
+            const uploadArea = document.getElementById('upload-area');
+
+            upscaleOptions.classList.add('hidden');
+            txt2imgOptions.classList.add('hidden');
+            ttsOptions.classList.add('hidden');
+            genControls.classList.add('hidden');
+            uym.classList.remove('hidden');
+            uploadArea.classList.remove('hidden');
+
+            if (groupName === 'upscale') {
+                upscaleOptions.classList.remove('hidden');
+            } else if (groupName === 'txt2img') {
+                uym.classList.add('hidden');
+                uploadArea.classList.add('hidden');
+                txt2imgOptions.classList.remove('hidden');
+                genControls.classList.remove('hidden');
+            } else if (groupName === 'tts') {
+                uym.classList.add('hidden');
+                uploadArea.classList.add('hidden');
+                ttsOptions.classList.remove('hidden');
+                genControls.classList.remove('hidden');
+            }
+        }
+        
+        function selectUpscaleOption(option, value) {
+            upscaleOption = value;
+            localStorage.setItem('selectedx', value);
+            document.getElementById('upscale-options').querySelectorAll('div').forEach(o => {
+                o.classList.remove('border-yellow-500', 'bg-yellow-50');
+                o.classList.add('border-gray-200');
+            });
+            option.classList.remove('border-gray-200');
+            option.classList.add('border-yellow-500', 'bg-yellow-50');
+        }
+
+        function shareCopy() {
+            const tempInput = document.createElement('textarea');
+            tempInput.value = 'https://imagepeel.com/';
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            try {
+                const successful = document.execCommand('copy');
+            } catch (err) {
+                showAlert('Failed to copy address. Please copy manually.', 'Copy Error');
+            }
+            document.body.removeChild(tempInput);
+            document.getElementById('share-alert-modal').remove();
+        }
+        
+        document.getElementById('crypto-address').addEventListener('click', () => {
+            const addressText = document.getElementById('crypto-address').textContent;
+            
+            const tempInput = document.createElement('textarea');
+            tempInput.value = addressText;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            
+            try {
+                const successful = document.execCommand('copy');
+                if (successful) {
+                    const originalText = document.getElementById('crypto-address').textContent;
+                    document.getElementById('crypto-address').textContent = 'Copied!';
+                    setTimeout(() => {
+                        document.getElementById('crypto-address').textContent = originalText;
+                    }, 1500);
+                } else {
+                    showAlert('Failed to copy address. Please copy manually.', 'Copy Error');
+                }
+            } catch (err) {
+                showAlert('Failed to copy address. Please copy manually.', 'Copy Error');
+            }
+            document.body.removeChild(tempInput);
+        });
+        
+        function scrollToUpload() {
+            document.getElementById('upload-section').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+
+        let resultUrl;
+        let filename;
+        
+        let counter = false;
+
+        const uploadArea = document.getElementById('upload-area');
+        const fileInput = document.getElementById('file-input');
+        const uploadContent = document.getElementById('upload-content');
+        const dropOverlay = document.getElementById('drop-overlay');
+        const processingStatus = document.getElementById('processing-status');
+        const processingMessage = document.getElementById('processing-message');
+        const resultsSection = document.getElementById('results-section');
+        const donatePlace = document.getElementById('donatePlace');
+        const imageResults = document.getElementById('image-results');
+        const audioResults = document.getElementById('audio-results');
+
+
+        uploadArea.addEventListener('click', () => {
+            fileInput.click();
+        });
+
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.classList.add('drag-active');
+            uploadContent.classList.add('hidden');
+            dropOverlay.classList.remove('hidden');
+        });
+
+        uploadArea.addEventListener('dragleave', (e) => {
+            e.preventDefault();
+            if (!uploadArea.contains(e.relatedTarget)) {
+                uploadArea.classList.remove('drag-active');
+                uploadContent.classList.remove('hidden');
+                dropOverlay.classList.add('hidden');
+            }
+        });
+
+        fileInput.addEventListener('change', (e) => {
+            handleFiles(e.target.files);
+        });
+        
+        async function handleFiles(files) {
+            let file = null;
+            let originalUrl = null;
+            let apiPath = '/api/' + cardd;
+            let fetchBody = null;
+            let isTTS = cardd === 'tts';
+            let isTextToImage = cardd === 'txt2img';
+            let headers = {};
+            processingMessage.textContent = 'Processing your media...';
+
+            if (isTextToImage) {
+                const prompt = document.getElementById('txt2img-prompt').value;
+                if (parseInt(document.getElementById('txt2img-width').value) * parseInt(document.getElementById('txt2img-height').value) > 360000) {
+                    showAlert('Image size is too large! Please choose smaller dimensions (Width * Height < 360,000).', 'Size Limit Exceeded');
+                    donatePlace.scrollIntoView({ behavior: 'smooth' });
+                    return;
+                }
+                const formData = {
+                    'negative-prompt': document.getElementById('txt2img-negative-prompt').value,
+                    'prompt': prompt,
+                    'width': document.getElementById('txt2img-width').value,
+                    'height': document.getElementById('txt2img-height').value,
+                    'steps': document.getElementById('txt2img-steps').value,
+                    'cfg': document.getElementById('txt2img-cfg').value,
+                    'seed': document.getElementById('txt2img-seed').value
+                };
+                fetchBody = JSON.stringify(formData);
+                filename = `imagepeel.com.png`;
+
+            } else if (isTTS) {
+                const formData = new FormData();
+                formData.set('prompt', document.getElementById('tts-prompt').value);
+                formData.set('speed', document.getElementById('tts-speed').value);
+                formData.set('voice', document.getElementById('tts-voice').value);
+                formData.set('voice-blend', document.getElementById('tts-voice-blend').value);
+                fetchBody = formData;
+                filename = 'imagepeel.com.mp3';
+                processingMessage.textContent = 'Generating speech (this may take a moment)...';
+                
+            } else {
+                if (typeof files === 'string') {
+                    var formData = JSON.stringify(files);
+                    fetchBody = formData;
+                }
+                else {
+                    var formData = new FormData();
+                    file = files[0];
+                    if (file) {
+                        originalUrl = URL.createObjectURL(file);
+                        if (cardd === 'removal') filename = file.name.substring(0, file.name.lastIndexOf('.')) + '-removed.png';
+                        else if (cardd === 'upscale') filename = file.name.substring(0, file.name.lastIndexOf('.')) + '-' + upscaleOption + '.png';
+                        else filename = file.name;
+                    }
+                    formData.append('file', file);
+                    if (cardd === 'upscale') {
+                        formData.append('x', upscaleOption);
+                    }
+                    fetchBody = formData;
+                }
+            }
+
+            processingStatus.classList.remove('hidden');
+            imageResults.classList.add('hidden');
+            audioResults.classList.add('hidden');
+            resultsSection.classList.add('hidden');
+
+            const share = document.getElementById('share-alert-modal');
+            if (share) {
+                if (counter) {
+                    share.remove();
+                }
+                else {
+                    counter = true;
+                }
+            }
+
+            processingStatus.scrollIntoView({ behavior: 'smooth' });
+            
+            try {
+                let response;
+                let data;
+
+                const token = getAuthToken();
+                if (!token) {
+                    historySection.classList.add('hidden');
+                }
+                
+                if (isTTS) {
+                    response = await fetch(apiPath, {
+                        method: 'POST',
+                        body: fetchBody,
+                    });
+                    url = await response.blob();
+                    if (!url) showAlert('Text to Speech failed, server returned nothing', 'Generation Error');
+                    showAudioResult(url);
+                } else if (isTextToImage) {
+                    if (token) {
+                        response = await fetch(apiPath, {
+                            headers: { 'Authorization': `Bearer ${token}` },
+                            method: 'POST',
+                            body: fetchBody,
+                        });
+                    }
+                    else {
+                        response = await fetch(apiPath, {
+                            method: 'POST',
+                            body: fetchBody,
+                        });
+                    }
+
+                    const blob = await response.blob();
+                    
+                    if (blob.size === 0) {
+                        showAlert('Image generation failed: The server returned an empty result. Please refine your prompt.', 'Generation Error');
+                        return;
+                    }
+
+                    resultUrl = window.URL.createObjectURL(blob);
+                    showImageResults(resultUrl, null);
+
+                } else {
+                    if (token) {
+                        response = await fetch(apiPath, {
+                            headers: { 'Authorization': `Bearer ${token}` },
+                            method: 'POST',
+                            body: fetchBody
+                        });
+                    }
+                    else {
+                        response = await fetch(apiPath, {
+                            method: 'POST',
+                            body: fetchBody
+                        });
+                    }
+
+                    const blob = await response.blob();
+                    
+                    if (blob.size === 0) {
+                        showAlert('Processing failed: The server returned an empty image result.', 'Processing Error');
+                        return;
+                    }
+
+                    resultUrl = window.URL.createObjectURL(blob);
+                    showImageResults(resultUrl, originalUrl);
+                }
+                
+            } catch (error) {
+                console.error('Processing failed:', error);
+                showAlert('An unexpected error occurred during processing. Please check your connection and try again.', 'Connection Error');
+            } finally {
+                processingStatus.classList.add('hidden');
+            }
+        }
+        function showImageResults(afterUrl, beforeUrl) {
+            
+            const beforeImage = document.getElementById('before-image');
+            const afterImage = document.getElementById('after-image');
+            const slider = document.getElementById('slider');
+            const beforeAfterWrapper = document.getElementById('before-after-wrapper');
+            document.getElementById('download-btn').textContent = 'Download Image';
+
+            imageResults.classList.remove('hidden');
+            audioResults.classList.add('hidden');
+            resultsSection.classList.remove('hidden');
+            
+            if (cardd === 'txt2img') {
+                beforeImage.src = afterUrl;
+                afterImage.src = '';
+                beforeAfterWrapper.style.clipPath = 'none';
+                afterImage.style.clipPath = 'none';
+                slider.classList.add('hidden');
+                resultsSection.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                beforeImage.src = afterUrl;
+                afterImage.src = beforeUrl ? beforeUrl : beforeUrlVar;
+                slider.classList.remove('hidden');
+                beforeAfterWrapper.style.clipPath = 'none';
+                initializeSlider();
+                resultsSection.scrollIntoView({ behavior: 'smooth' });
+                setTimeout(constantAnimation, 500);
+            }
+        }
+
+function constantAnimation() {
+  const afterImage = document.getElementById('after-image');
+  slider.style.animation = "moveLeft 3s ease-in-out forwards";
+  afterImage.style.animation = "moveClipPath 3s ease-in-out forwards";
+  afterImage.style.clipPath = 'polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)';
+  afterImage.addEventListener('animationend', () => {
+  slider.style.animation = '';
+  afterImage.style.animation = '';
+});
+}
+
+
+
+        function showAudioResult(url) {
+            
+            const audioPlayer = document.getElementById('tts-audio-player');
+            imageResults.classList.add('hidden');
+            audioResults.classList.remove('hidden');
+            resultsSection.classList.remove('hidden');
+            
+            resultUrl = window.URL.createObjectURL(url);
+            
+            audioPlayer.src = resultUrl;
+            audioPlayer.load();
+            audioPlayer.play().catch(e => console.log("Autoplay blocked:", e));
+
+            resultsSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function initializeSlider() {
+            const slider = document.getElementById('slider');
+            const afterImage = document.getElementById('after-image');
+            const container = slider.parentElement;
+
+            let isDragging = false;
+
+            if (!container.dataset.sliderInitialized) {
+                container.dataset.sliderInitialized = 'true';
+
+                slider.addEventListener('mousedown', (e) => {
+                    e.preventDefault();
+                    isDragging = true;
+                });
+
+                document.addEventListener('mousemove', (e) => {
+                    if (!isDragging) return;
+                    handleDrag(e.clientX);
+                });
+
+                document.addEventListener('mouseup', () => {
+                    isDragging = false;
+                });
+
+                slider.addEventListener('touchstart', (e) => {
+                    e.preventDefault();
+                    isDragging = true;
+                });
+
+                document.addEventListener('touchmove', (e) => {
+                    if (!isDragging) return;
+                    handleDrag(e.touches[0].clientX);
+                });
+
+                document.addEventListener('touchend', () => {
+                    isDragging = false;
+                });
+            }
+
+            function handleDrag(clientX) {
+                const rect = container.getBoundingClientRect();
+                const x = clientX - rect.left;
+                const percentage = Math.max(0, Math.min(100, (x / rect.width) * 100));
+
+                slider.style.left = percentage + '%';
+                afterImage.style.clipPath = `polygon(${percentage}% 0%, 100% 0%, 100% 100%, ${percentage}% 100%)`;
+            }
+        }
+
+        document.getElementById('download-btn').addEventListener('click', () => {
+             if (!resultUrl) {
+                showAlert('No result available to download.', 'Download Error');
+                return;
+            }
+            const a = document.createElement('a');
+            a.style.display = 'none';
+            a.href = resultUrl;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+        });
+
+        document.getElementById('download-audio-btn').addEventListener('click', () => {
+             if (!resultUrl) {
+                showAlert('No audio result available to download.', 'Download Error');
+                return;
+            }
+            const a = document.createElement('a');
+            a.style.display = 'none';
+            a.href = resultUrl;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+        });
+
+        document.getElementById('gen-btn').addEventListener('click', () => {
+            handleFiles(null);
+        });
+        
+        document.querySelectorAll('section:nth-last-child(3) button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                showAlert('Donation functionality would typically redirect you to a secure payment processor or open a wallet link.', 'Donation Info');
+            });
+        });
+
+
+
+        const form = document.getElementById('subscribe-form');
+        const emailInput = document.getElementById('email');
+        const card = document.getElementById('subscription-card');
+        const successMessage = document.getElementById('success-message');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const email = emailInput.value.trim();
+            if (!/\S+@\S+\.\S+/.test(email)) {
+                showAlert('Incorrect email address', 'Subscribe Error');
+                return;
+            }
+            fetch('/api/subscribe', {method: 'POST', body: email}).then(resp => resp.text()).then(data => {
+                if (data === 'null') {
+                    card.classList.add('scale-90', 'opacity-0');
+                    card.classList.remove('scale-100', 'opacity-100');
+                    card.classList.add('hidden');
+                    successMessage.classList.remove('hidden', 'scale-90', 'opacity-0', 'absolute');
+                    successMessage.classList.add('scale-100', 'opacity-100');
+                    emailInput.value = '';
+                }
+                else if (data === 'already') showAlert('Already subscribed', 'Subscribe Error');
+                else if (data === 'accept') showAlert('We do not accept emails from this provider', 'Subscribe Error');
+                else if (data === 'format') showAlert('Incorrect email address', 'Subscribe Error');
+                else showAlert('Unknown error happened, Please try again', 'Subscribe Error');
+            });
+        });
+
+        const AUTH_TOKEN_KEY = 'access_token';
+const authButton = document.getElementById('auth-button');
+const historySection = document.getElementById('history-section');
+const imageHistoryContainer = document.getElementById('image-history-container');
+const historyEmpty = document.getElementById('history-empty');
+
+const imageModal = document.getElementById('image-modal');
+const modalImage = document.getElementById('modal-image');
+const modalDownloadBtn = document.getElementById('modal-download-btn');
+const modalTitle = document.getElementById('modal-title');
+let currentImageUrl = '';
+
+function getAuthToken() {
+    return localStorage.getItem(AUTH_TOKEN_KEY);
+}
+
+function setAuthToken(token) {
+    localStorage.setItem(AUTH_TOKEN_KEY, token);
+}
+
+function removeAuthToken() {
+    localStorage.removeItem(AUTH_TOKEN_KEY);
+}
+
+function openImageModal(outputUrl, output_url) {
+    currentImageUrl = output_url;
+    modalImage.src = outputUrl;
+    modalDownloadBtn.href = outputUrl;
+    imageModal.classList.remove('hidden');
+}
+
+function closeImageModal() {
+    imageModal.classList.add('hidden');
+    modalImage.src = '';
+    modalDownloadBtn.href = '#';
+    currentImageUrl = '';
+}
+
+function copyImageUrl() {
+    navigator.clipboard.writeText(window.location.origin + '/' + currentImageUrl);
+}
+
+function createHistoryImageElement(item) {
+    const userFolder = item.output_url.split('/')[1];
+    const div = document.createElement('div');
+    div.className = 'group relative w-full h-40 bg-gray-200 rounded-lg overflow-hidden shadow-lg cursor-pointer transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl';
+    div.setAttribute('draggable', 'true');
+    div.setAttribute('data-output-url', item.output_url);
+    const token = getAuthToken();
+    if (!token) {
+        historySection.classList.add('hidden');
+        return;
+    }
+    const img = document.createElement('img');
+    fetch(item.output_url, {
+        headers: { Authorization: `Bearer ${token}` }
+    })
+    .then(res => res.blob())
+    .then(blob => {
+        img.src = URL.createObjectURL(blob);
+    });
+    img.alt = 'Image';
+    img.className = 'w-full h-full object-cover transition-opacity duration-300';
+    const overlay = document.createElement('div');
+    overlay.className = 'absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300';
+    overlay.innerHTML = `<span class="text-white text-center font-bold text-sm uppercase">Image</span>`;
+    div.onclick = () => openImageModal(img.src, item.output_url);
+    div.addEventListener('dragstart', (e) => {
+        e.dataTransfer.setData('text/plain', JSON.stringify([item.output_url, img.src]));
+        e.dataTransfer.effectAllowed = 'copy';
+        div.classList.add('opacity-50');
+    });
+    div.addEventListener('dragend', () => {
+        div.classList.remove('opacity-50');
+    });
+    div.appendChild(img);
+    div.appendChild(overlay);
+    return div;
+}
+
+async function fetchUserImages() {
+    const token = getAuthToken();
+    if (!token) {
+        return;
+    }
+    
+    try {
+        const response = await fetch('/api/history', {
+            headers: { 'Authorization': `Bearer ${token}` }
+        });
+
+        if (response.ok) {
+            const images = await response.json();
+            renderUserImages(images);
+        } else {
+            console.error('Failed to fetch user images:', response.status);
+            logoutUser(); 
+        }
+    } catch (error) {
+        console.error('Network error fetching images:', error);
+    }
+}
+
+function renderUserImages(images) {
+    imageHistoryContainer.innerHTML = '';
+
+    if (images.length === 0) {
+        historySection.classList.remove('hidden');
+        historyEmpty.classList.remove('hidden');
+    } else {
+        images.forEach(item => {
+            imageHistoryContainer.appendChild(createHistoryImageElement(item));
+        });
+        historySection.classList.remove('hidden');
+        historyEmpty.classList.add('hidden');
+    }
+}
+
+async function checkLoginStatus() {
+    const token = getAuthToken();
+    if (token) {
+        authButton.textContent = 'Logout';
+        authButton.onclick = logoutUser;
+        authButton.classList.remove('bg-purple-600', 'hover:bg-purple-700');
+        authButton.classList.add('bg-red-500', 'hover:bg-red-600');
+        fetchUserImages();
+    } else {
+        authButton.textContent = 'Join';
+        authButton.onclick = () => window.location.pathname = '/join';
+        authButton.classList.remove('bg-red-500', 'hover:bg-red-600');
+        authButton.classList.add('bg-purple-600', 'hover:bg-purple-700');
+        historySection.classList.remove('hidden');
+        historyEmpty.classList.remove('hidden');
+    }
+}
+
+async function logoutUser() {
+    try {
+        await fetch('/api/logout', { method: 'POST' });
+    } catch(e) {
+        console.error('Failed to contact server for logout.');
+    }
+    removeAuthToken();
+    await checkLoginStatus();
+}
+
+var beforeUrlVar;
+
+uploadArea.addEventListener('drop', (e) => {
+    e.preventDefault();
+    uploadArea.classList.remove('drag-active');
+    document.getElementById('upload-content').classList.remove('hidden');
+    document.getElementById('drop-overlay').classList.add('hidden');
+
+    const data = e.dataTransfer.getData('text/plain');
+    if (data) {
+        const da = JSON.parse(data);
+        beforeUrlVar = da[1];
+        handleFiles(da[0]);
+    }
+    else {
+        const files = e.dataTransfer.files;
+        handleFiles(files);
+    }
+
+});
+
+checkLoginStatus();
+    </script>
+</body>
+</html>
